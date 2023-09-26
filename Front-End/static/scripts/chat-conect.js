@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
     } else {
         // Si no se encuentra userData en localStorage, redirigir al usuario a la página de inicio de sesión
        // alert("Esta siendo redireccionado...");
-        window.location.href = "./index.html";
+        window.location.href = "/Front-End/templates/index.html";
     }
 });
 
@@ -76,7 +76,7 @@ function logout() {
             return response.json().then(data => {
                 // Eliminar `userData` de localStorage al cerrar sesión
                 localStorage.removeItem('userData');
-                window.location.href = "./index.html";
+                window.location.href = "/GuidoMaxier.github.io/Front-End/templates/index.html";
             });
         } else {
             return response.json().then(data => {
@@ -247,3 +247,22 @@ document.getElementById('closeClave').addEventListener('click', function () {
   });
 
 
+
+
+
+
+  document.getElementById('openProfile').addEventListener('click', () => {
+    // URL de la página a la que deseas redirigir
+    const profileURL = '/Front-End/templates/profile.html';
+
+    // Opciones para la ventana emergente
+    const popupOptions = 'width=400,height=400,menubar=no,location=no,resizable=no,scrollbars=no,status=no';
+
+    // Abrir la ventana emergente
+    const popupWindow = window.open(profileURL, 'Profile', popupOptions);
+
+    // Enfocar la ventana emergente (opcional)
+    if (popupWindow) {
+        popupWindow.focus();
+    }
+});

@@ -27,7 +27,7 @@
               // Almacena userData en localStorage
               localStorage.setItem('userData', JSON.stringify(data));
               // Redirige a la página de perfil
-              window.location.href = "./profile.html";
+              window.location.href = "../Discord Front/discord.html";
           });
       } else {
           return response.json().then(data => {

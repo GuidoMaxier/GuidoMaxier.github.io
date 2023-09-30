@@ -1,0 +1,100 @@
+/* Estilos generales */
+body {
+
+    background-image: url('../Front-End/static/assets/wallpapers.png');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza la página */
+
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    position: fixed; /* Establece la posición fija */
+    top: 0; /* Fija el encabezado en la parte superior de la ventana */
+    width: 100%; /* Ancho completo */
+    background-color: #007acc; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 20px 0; /* Espaciado interno */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0px 2px 5px rgba(221, 215, 215, 0.2); /* Sombra para un aspecto elevado */
+}
+
+
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para cada sección */
+section h2 {
+    color: #007acc;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+section p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Enlace de la versión demo */
+section#demo {
+    background-color: #e7f3fc;
+    text-align: center;
+    padding: 30px;
+}
+
+section#demo a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#demo p{
+    text-align: center;
+}
+
+section#demo a:hover {
+    background-color: #005ea6;
+}
+
+
+ol, ul {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Aplicar justificación completa (como en Word) */
+.container {
+    text-align: justify;
+}
+

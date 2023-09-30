@@ -1,115 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Portafolio de Hernan Guido Gustavo Casasola</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .project-link {
-            display: block;
-            margin-bottom: 10px;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            color: #333;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        .social-links a:hover {
-            color: #007bff;
-        }
-
-        .container p {
-        text-align: justify;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defensa del Proyecto de Programación</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <h1>Portafolio de Hernan Guido Gustavo Casasola</h1>
-        <p>Programador en busca de oportunidades</p>
+        <h1>Defensa del Proyecto de Programación</h1>
     </header>
-    <div class="container">
-        <h2>Sobre mí</h2>
-        <p>Soy Hernan Guido Gustavo Casasola, un apasionado por la programación en busca de oportunidades para crecer profesionalmente. Aunque aún no he tenido experiencia profesional como programador, he participado activamente en proyectos, incluido el desarrollo de un bot en Autoit. Mi conocimiento abarca una amplia variedad de tecnologías, desde lenguajes como Java, JavaScript, HTML, CSS y Python, hasta frameworks como Flask y herramientas como Git y GitHub. Además, tengo experiencia en bases de datos SQL y MySQL, así como en el desarrollo de interfaces gráficas utilizando Tkinter.</p>
 
-        <p>Actualmente, estoy en el último año de la tecnicatura en desarrollo de software, lo que me ha proporcionado una sólida base teórica y práctica en programación. Mi objetivo profesional es encontrar un trabajo donde pueda aplicar mis conocimientos y aprender de manera continua. Desde que conocí Python, me enamoré de este lenguaje y estoy emocionado por la posibilidad de trabajar en proyectos que lo utilicen.</p>
+    <section id="introduction">
+        <h2>Introducción:</h2>
+        <p>
+            La aplicación que hemos desarrollado tiene como objetivo proporcionar a los usuarios una plataforma
+            para la gestión de servidores y canales de chat. A continuación, presentamos las funcionalidades clave de
+            la aplicación y destacamos los desafíos y limitaciones que enfrentamos durante su desarrollo.
+        </p>
+    </section>
 
-        <p>Más allá de mis habilidades técnicas, también poseo habilidades blandas que incluyen la capacidad de resolver problemas, trabajar en equipo y comunicarme eficazmente. Estoy comprometido con mi crecimiento profesional y siempre estoy dispuesto a asumir nuevos desafíos y aprender nuevas tecnologías.</p>
+    <section id="functionality">
+        <h2>Funcionalidades:</h2>
+        <ol>
+            <li>Crear usuarios: Los usuarios pueden registrarse proporcionando su nombre, contraseña y otros datos
+                necesarios. La imagen de perfil se puede elegir después de la creación del usuario.</li>
+            <li>Iniciar sesión: Los usuarios pueden iniciar sesión. Si no existen, se les sugiere registrarse.</li>
+            <li>Pantalla Principal:
+                <ul>
+                    <li>Primera columna: Muestra un listado de los servidores a los que el usuario pertenece. Si no
+                        pertenece a ninguno, se muestra un mensaje indicando esto. Se puede crear un servidor nuevo.
+                    </li>
+                    <li>Segunda columna: Muestra un listado de los canales del servidor seleccionado. Si no hay canales,
+                        se muestra un mensaje indicándolo. Se puede crear un canal nuevo.</li>
+                    <li>Tercera columna: Muestra mensajes ordenados cronológicamente en el chat del canal seleccionado.
+                        Se puede escribir un nuevo mensaje.</li>
+                </ul>
+            </li>
+            <li>Los mensajes solo pueden ser modificados o eliminados por el usuario que los ha creado.</li>
+            <li>Perfil de Usuario: Los usuarios pueden actualizar sus datos personales, incluyendo la imagen de perfil.
+            </li>
+            <li>Manejadores de Errores Personalizados: Implementamos manejo de errores para códigos 400, 404, 403 y 500
+                para mejorar la experiencia del usuario.</li>
+            <li><s>Buscador de Servidores: Los usuarios pueden buscar servidores por nombre. Los resultados muestran el
+                    nombre del servidor, la descripción (si la hay) y la cantidad de usuarios registrados.</s></li>
+            <li>Administración de Sesión: Registramos la información de inicio de sesión y restringimos el acceso a
+                usuarios logueados.</li>
+            <li><s>Notificaciones e Invitaciones a un Servidor: Implementamos notificaciones e invitaciones para mejorar
+                    la
+                    comunicación entre usuarios.</s></li>
+        </ol>
+    </section>
 
-        <h2>Proyectos Destacados 2023</h2>
-        <p>A continuación, encontrarás algunos de mis proyectos más destacados:</p>
+    <section id="technologies">
+        <h2>Tecnologías Utilizadas:</h2>
         <ul>
-            <li>
-                <a class="project-link" href="../Front-End/templates/index.html">Proyecto CLON DISCORD </a>
-                <p>Descripción breve: </p>
-                <p>En la Tecnicatura en desarrollo de software, hemos realizado el proyecto del clon de DISCORD usando vanilla</p>
-            </li>
-            <!-- <li>
-                <a class="project-link" href="#">Proyecto 2 - Descripción breve</a>
-            </li>
-            <li>
-                <a class="project-link" href="#">Proyecto 3 - Descripción breve</a>
-            </li> -->
+            <li>Flask para el desarrollo del backend.</li>
+            <li>Python-mysql.connector para consultas a la base de datos MySQL.</li>
+            <li>HTML y CSS para la estructura y el diseño de la interfaz de usuario.</li>
+            <li>JavaScript para la interactividad en la interfaz de usuario.</li>
         </ul>
+    </section>
 
-        <h2>Contacto</h2>
-        <p>Puedes contactarme a través de hernan.casasola@gmail.com o seguirme en mis redes sociales:</p>
-        <ul class="social-links">
-            <li><a href="https://www.linkedin.com/in/hern%C3%A1n-casasola/">LinkedIn</a></li>
-            <li><a href="https://github.com/GuidoMaxier">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-        </ul>
-    </div>
+    <section id="conclusions">
+        <h2>Conclusiones:</h2>
+        <p>
+            Durante el desarrollo de este proyecto, enfrentamos varios desafíos, pero logramos implementar las
+            funcionalidades clave requeridas. Aprendimos mucho sobre el diseño de aplicaciones web y la gestión de
+            bases de datos. Planeamos continuar mejorando y completando las funcionalidades restantes en el futuro.
+        </p>
+    </section>
+
+    <section id="questions">
+        <h2>Preguntas y Comentarios:</h2>
+        <p>
+            Les invitamos a hacer preguntas y proporcionar comentarios sobre nuestro proyecto. Estamos abiertos a
+            cualquier sugerencia o consulta.
+        </p>
+    </section>
+
+    <section id="media">
+        <h2>Imágenes y Videos:</h2>
+        <p>
+            A continuación, mostramos algunas imágenes y capturas de pantalla de nuestra aplicación en acción.
+        </p>
+        <!-- Inserta aquí tus imágenes y videos si los tienes -->
+    </section>
+
+    <section id="demo">
+        <h2>Versión Demo:</h2>
+        <p>
+            Puedes probar una versión demo de nuestra aplicación haciendo clic en el siguiente enlace:
+            <br>
+            <a href="/Front-End/templates/index.html" target="_blank">Versión Demo</a>
+        </p>
+    </section>
+
+
+
+    <footer>
+        <h2>Referencias:</h2>
+        <p>
+            Agradecemos a todas las fuentes y recursos que consultamos durante el desarrollo de este proyecto.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

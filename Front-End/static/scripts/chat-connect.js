@@ -7,18 +7,22 @@ window.addEventListener('load', function () {
         //displayProfileData(userData);
         const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
 
-        obtenerDatosUsuarioDesdeAPI(idUsuario)
+        obtenerDatosUsuarioDesdeAPI(idUsuario);
+        cargarServidores(idUsuario);
+
 
     } else {
         // Si no se encuentra userData en localStorage, redirigir al usuario a la página de inicio de sesión
        // alert("Esta siendo redireccionado...");
-        window.location.href = "./index.html";
+        window.location.href = "/Front-End/templates/index.html";
     }
 });
 
+///////////////////////// READ ////////////////////////////
+// Función para obtener los datos del usuario desde la API y actualizar el formulario
 
-const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
-obtenerDatosUsuarioDesdeAPI(idUsuario)
+// const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+// obtenerDatosUsuarioDesdeAPI(idUsuario)
 
 ///////////////////////// READ ////////////////////////////
 // Función para obtener los datos del usuario desde la API y actualizar el formulario
@@ -36,10 +40,6 @@ function obtenerDatosUsuarioDesdeAPI(idUsuario) {
       .then((data) => {
         // Actualiza los campos del formulario con los nuevos datos
         displayProfileData(data);
-        // document.querySelector('input[name="nombre"]').value = data.nombre;
-        // document.querySelector('input[name="apellido"]').value = data.apellido;
-        // document.querySelector('input[name="email"]').value = data.email;
-        // document.querySelector('input[name="username"]').value = data.username;
       });
 }
 
@@ -58,7 +58,7 @@ function displayProfileData(Data) {
 
         // Asignar la ruta de la imagen de perfil al elemento de vista previa
     document.getElementById("imagen_perfil_preview").src = Data.ruta_imagen_perfil;
-    document.getElementsByName("username")[0].textContent = Data.username;
+    document.getElementsByName("username_pie")[0].textContent = Data.username;
     document.getElementsByName("id_usuario")[0].textContent = "#" + Data.id_usuario;
 
     //document.getElementsByName("contraseña")[0].value = userData.contraseña;
@@ -148,7 +148,7 @@ document.getElementById('Guardar-Cambios').addEventListener('click', (event) => 
     const apellido = document.querySelector('input[name="apellido"]').value;
     const email = document.querySelector('input[name="email"]').value;
     const username = document.querySelector('input[name="username"]').value;
-    const rutaImagen = document.getElementById("imagen_perfil_preview").getAttribute("src");
+    const rutaImagen = document.getElementById("imagen_perfil").getAttribute("src");
 
     // Agrega los valores al objeto FormData
     formData.append('nombre', nombre);
@@ -252,17 +252,3 @@ document.getElementById("Cambiar-Clave").addEventListener("click", function () {
 document.getElementById('closeClave').addEventListener('click', function () {
     document.getElementById('modal-clave').style.display = 'none';
   });
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-

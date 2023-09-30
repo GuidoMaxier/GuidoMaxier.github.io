@@ -4,7 +4,7 @@
     login();
   });
 
-  function login() {
+function login() {
   const data = {
       username: document.getElementById('username').value,
       contraseña: document.getElementById('password').value
@@ -27,7 +27,7 @@
               // Almacena userData en localStorage
               localStorage.setItem('userData', JSON.stringify(data));
               // Redirige a la página de perfil
-              window.location.href = "../Discord Front/discord.html";
+              window.location.href = "./discord.html";
           });
       } else {
           return response.json().then(data => {

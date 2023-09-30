@@ -4,23 +4,24 @@
 }
 
 body {
+    background: rgb(40, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    min-height: 100vh;
 
     background-image: url('../assets/wallpapers.png');
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza la página */
-
-    /* background: rgb(40, 40, 40); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 60px;
+    
 }
 
 
 .logeo  {
     display: flex;
-    background: hsla(320, 81%, 10%, 0.589);
+    background: #020e276c;
     padding: 20px 20px 20px 30px;
     width: fit-content;
     border-radius: 5px;
@@ -61,14 +62,14 @@ form p {
 }
 
 form input {
-    width: 400px;
+    width: 350px;
     background: #202225;
-    border: none;
+    border:#1c07da;
     font-size: 15px;
     color: rgb(200, 200, 200);
     padding: 12px;
     border-radius: 2px;
-    outline: solid 5px transparent
+    outline: solid 50px transparent
 }
 
 
@@ -86,7 +87,7 @@ form button {
     margin-top: 25px;
     font-size: 15px;
     font-weight: 300;
-    background: #5865f2;
+    background: #5865f26c;
     color: white;
     border: none;
     padding: 11px;
@@ -95,7 +96,7 @@ form button {
 }
 
 form button:hover {
-    background: #4b55c5
+    background: #515cd6ec
 }
 
 

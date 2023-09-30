@@ -17,14 +17,18 @@ header {
     position: fixed; /* Establece la posición fija */
     top: 0; /* Fija el encabezado en la parte superior de la ventana */
     width: 100%; /* Ancho completo */
-    background-color: #007acc; /* Color de fondo */
+    background-color: #007accfa; /* Color de fondo */
     color: #fff; /* Color de texto */
     text-align: center; /* Centra el texto horizontalmente */
-    padding: 20px 0; /* Espaciado interno */
+    padding: 10px 0; /* Espaciado interno */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
     box-shadow: 0px 2px 5px rgba(221, 215, 215, 0.2); /* Sombra para un aspecto elevado */
+
 }
 
+#introduction {
+    margin-top: 70px; /* Ajusta el margen superior según sea necesario */
+}
 
 
 h1 {
@@ -63,7 +67,7 @@ section#demo {
 section#demo a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007acc;
+    background-color: #007accce;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -93,7 +97,7 @@ footer {
     padding: 10px 0;
 }
 
-/* Aplicar justificación completa (como en Word) */
+/* Aplicar justificación completa*/
 .container {
     text-align: justify;
 }

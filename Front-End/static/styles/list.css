@@ -4,7 +4,7 @@ html {
 
 /*Estilo cuerpo*/
 body {
-    background: rgb(40, 40, 40);
+    background: rgba(40, 40, 40, 0.76);
     display: flex;
     height: 100%;
 }
@@ -27,7 +27,7 @@ body {
 }
 
 .server_column {
-    background: #202225;
+    background: #202225bb;
     padding: 13px;
     padding-top: 4px;
     align-items: center;
@@ -40,7 +40,7 @@ body {
 
 /*Estilo imagen perfil columna-servidor*/
 .logo, .profile1, .profile2, .server-list {
-    background: #36393f;
+    background: #36393fa4;
     border-radius: 30px;
     width: 48px;
     height: 48px;
@@ -53,7 +53,7 @@ body {
 
 /*Estilos botón crear servidor*/
 #create-server{
-    background: #36393f;
+    background: #36393f7a;
 
     border-radius: 30px;
     width: 48px;
@@ -65,7 +65,7 @@ body {
     position:relative;
     margin-left: 0px;
     font-size: 25px;
-    color:rgb(11, 229, 157);
+    color:rgba(11, 229, 156, 0.507);
     margin-top: 15px; 
 }
 
@@ -76,7 +76,7 @@ body {
 }
 
 .image_button{
-    background: rgb(11, 229, 157);
+    background: rgb(11, 229, 156);
     border-radius: 30px;
     width: 48px;
     height: 48px;

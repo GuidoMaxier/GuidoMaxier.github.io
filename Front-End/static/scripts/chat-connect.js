@@ -88,31 +88,57 @@ function displayProfileData(Data) {
 
 
 // Llamar a la función para logout el usuario cuando se hace clic en el botón
-document.getElementById("logout").addEventListener("click", logout);
-function logout() {
+// document.getElementById("logout").addEventListener("click", logout);
+// function logout() {
        
+//     const url = "http://127.0.0.1:5000/logout";
+
+//     fetch(url, {
+//         method: 'GET',
+//         credentials: 'include'
+//     })
+//     .then(response => {
+//         if (response.status === 200) {
+//             return response.json().then(data => {
+//                 // Eliminar `userData` de localStorage al cerrar sesión
+//                 localStorage.removeItem('userData');
+//                 window.location.href = "./index.html";
+//             });
+//         } else {
+//             return response.json().then(data => {
+//                 document.getElementById("message").innerHTML = data.message;
+//             });
+//         }
+//     })
+//     .catch(error => {
+//         document.getElementById("message").innerHTML = "An error occurred.";
+//     });
+// }
+document.getElementById("logout").addEventListener("click", logout);
+
+async function logout() {
+  try {
     const url = "http://127.0.0.1:5000/logout";
 
-    fetch(url, {
-        method: 'GET',
-        credentials: 'include'
-    })
-    .then(response => {
-        if (response.status === 200) {
-            return response.json().then(data => {
-                // Eliminar `userData` de localStorage al cerrar sesión
-                localStorage.removeItem('userData');
-                window.location.href = "./index.html";
-            });
-        } else {
-            return response.json().then(data => {
-                document.getElementById("message").innerHTML = data.message;
-            });
-        }
-    })
-    .catch(error => {
-        document.getElementById("message").innerHTML = "An error occurred.";
+    const response = await fetch(url, {
+      method: 'GET',
+      credentials: 'include'
     });
+
+    if (response.status === 200) {
+      const data = await response.json();
+
+      // Eliminar `userData` de localStorage al cerrar sesión
+      localStorage.removeItem('userData');
+      window.location.href = "./index.html";
+    } else {
+      const data = await response.json();
+      document.getElementById("message").innerHTML = data.message;
+    }
+  } catch (error) {
+    document.getElementById("message").innerHTML = "An error occurred.";
+    console.error(error);
+  }
 }
 
 
@@ -120,43 +146,142 @@ function logout() {
 /////////////////////////// DELETE ////////////////////////////////
 
 // Llamar a la función para eliminar el usuario cuando se hace clic en el botón
-document.getElementById('Eliminar-usuario').addEventListener('click', eliminarUsuario);
 
-// Función para eliminar el usuario
-function eliminarUsuario() {
-    // Mostrar un cuadro de diálogo de confirmación
-    const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este usuario? Esta acción no se puede deshacer.');
+document.getElementById('Eliminar-usuario').addEventListener('click', async () => {
+    await eliminarUsuario();
+});
 
-    // Si el usuario confirmó la eliminación
-    if (confirmacion) {
-        // Obtener el ID del usuario desde localStorage
-        const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+// // Función para eliminar el usuario
+// function eliminarUsuario() {
+//     // Mostrar un cuadro de diálogo de confirmación
+//     const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este usuario? Esta acción no se puede deshacer.');
 
-        // Hacer una solicitud DELETE al backend con la URL correcta
-        fetch(`http://127.0.0.1:5000/${idUsuario}`, {
-            method: 'DELETE',
-        })
-            .then(response => {
-                if (response.status === 200) {
-                    // Usuario eliminado exitosamente, redireccionar a index.html o realizar cualquier otra acción necesaria
-                    localStorage.removeItem('userData');
-                    window.location.href = "./index.html";
-                } else {
-                    // Handle errores aquí
-                    console.error('Error al eliminar el usuario');
-                }
-            })
-            .catch(error => {
-                console.error('Error al comunicarse con el backend', error);
+//     // Si el usuario confirmó la eliminación
+//     if (confirmacion) {
+//         // Obtener el ID del usuario desde localStorage
+//         const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+
+//         // Hacer una solicitud DELETE al backend con la URL correcta
+//         fetch(`http://127.0.0.1:5000/${idUsuario}`, {
+//             method: 'DELETE',
+//         })
+//             .then(response => {
+//                 if (response.status === 200) {
+//                     // Usuario eliminado exitosamente, redireccionar a index.html o realizar cualquier otra acción necesaria
+//                     localStorage.removeItem('userData');
+//                     window.location.href = "./index.html";
+//                 } else {
+//                     // Handle errores aquí
+//                     console.error('Error al eliminar el usuario');
+//                 }
+//             })
+//             .catch(error => {
+//                 console.error('Error al comunicarse con el backend', error);
+//             });
+//     }
+// }
+
+async function eliminarUsuario() {
+    try {
+        // Mostrar un cuadro de diálogo de confirmación
+        const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este usuario? Esta acción no se puede deshacer.');
+
+        if (confirmacion) {
+            // Obtener el ID del usuario desde localStorage
+            const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+
+            // Realizar la solicitud DELETE al backend con la URL correcta
+            const response = await fetch(`http://127.0.0.1:5000/${idUsuario}`, {
+                method: 'DELETE',
             });
+
+            if (response.status === 200) {
+                // Usuario eliminado exitosamente, redireccionar a index.html o realizar cualquier otra acción necesaria
+                localStorage.removeItem('userData');
+                window.location.href = "./index.html";
+            } else {
+                // Manejar errores aquí
+                console.error('Error al eliminar el usuario');
+            }
+        }
+    } catch (error) {
+        console.error('Error al comunicarse con el backend', error);
     }
 }
-
   
  
 
 ////////////////////// UPDATE DATOS PERFIL //////////////////////
-document.getElementById('Guardar-Cambios').addEventListener('click', (event) => {
+// document.getElementById('Guardar-Cambios').addEventListener('click', (event) => {
+//     event.preventDefault();
+
+//     const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+//     const formData = new FormData(); // Crea un nuevo objeto FormData
+
+//     // Obtén los valores de nombre, apellido, email y username del formulario
+//     const nombre = document.querySelector('input[name="nombre"]').value;
+//     const apellido = document.querySelector('input[name="apellido"]').value;
+//     const email = document.querySelector('input[name="email"]').value;
+//     const username = document.querySelector('input[name="username"]').value;
+//     const rutaImagen = document.getElementById("imagen_perfil").getAttribute("src");
+
+//     // Agrega los valores al objeto FormData
+//     formData.append('nombre', nombre);
+//     formData.append('apellido', apellido);
+//     formData.append('email', email);
+//     formData.append('username', username);
+//     formData.append('ruta_imagen_perfil', rutaImagen);
+
+//     // Realiza la solicitud de actualización utilizando fetch
+//     fetch(`http://127.0.0.1:5000/${idUsuario}`, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(Object.fromEntries(formData)), // Convierte FormData a objeto y luego a JSON
+//     })
+//         .then((response) => {
+//             if (!response.ok) {
+//                 throw new Error('Error al actualizar el usuario');
+//             }
+
+//             // Actualiza los campos del formulario con los nuevos datos
+//             obtenerDatosUsuarioDesdeAPI(idUsuario);
+//             alert("Usuario actualizado con éxito");
+//             console.log('Usuario actualizado con éxito');
+//         })
+//         .catch((error) => {
+//             console.error('Error al actualizar el usuario', error);
+//             // Puedes mostrar un mensaje de error al usuario u otras acciones en caso de error
+//         });
+// });
+// Función para realizar la solicitud de actualización del usuario
+async function actualizarUsuario(idUsuario, formData) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/${idUsuario}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Object.fromEntries(formData)), // Convierte FormData a objeto y luego a JSON
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al actualizar el usuario');
+        }
+
+        // Actualiza los campos del formulario con los nuevos datos
+        await obtenerDatosUsuarioDesdeAPI(idUsuario);
+        alert("Usuario actualizado con éxito");
+        console.log('Usuario actualizado con éxito');
+    } catch (error) {
+        console.error('Error al actualizar el usuario', error);
+        // Puedes mostrar un mensaje de error al usuario u otras acciones en caso de error
+    }
+}
+
+// Agregar un evento click al botón "Guardar-Cambios"
+document.getElementById('Guardar-Cambios').addEventListener('click', async (event) => {
     event.preventDefault();
 
     const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
@@ -176,67 +301,98 @@ document.getElementById('Guardar-Cambios').addEventListener('click', (event) => 
     formData.append('username', username);
     formData.append('ruta_imagen_perfil', rutaImagen);
 
-    // Realiza la solicitud de actualización utilizando fetch
-    fetch(`http://127.0.0.1:5000/${idUsuario}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(Object.fromEntries(formData)), // Convierte FormData a objeto y luego a JSON
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Error al actualizar el usuario');
-            }
-
-            // Actualiza los campos del formulario con los nuevos datos
-            obtenerDatosUsuarioDesdeAPI(idUsuario);
-            alert("Usuario actualizado con éxito");
-            console.log('Usuario actualizado con éxito');
-        })
-        .catch((error) => {
-            console.error('Error al actualizar el usuario', error);
-            // Puedes mostrar un mensaje de error al usuario u otras acciones en caso de error
-        });
+    // Llama a la función para actualizar el usuario
+    await actualizarUsuario(idUsuario, formData);
 });
+
+
+
 
 
 ////////////////////// UPDATE CLAVE //////////////////////
 
-function cambiarClave(nuevaClave, confirmacion) {
-    const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+// function cambiarClave(nuevaClave, confirmacion) {
+//     const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
     
-    if (nuevaClave !== confirmacion) {
-        // Las contraseñas no coinciden, puedes mostrar un mensaje de error aquí
-        alert("La nueva contraseña y la confirmación no coinciden. Por favor, inténtalo de nuevo.");
-        return;
-    }
+//     if (nuevaClave !== confirmacion) {
+//         // Las contraseñas no coinciden, puedes mostrar un mensaje de error aquí
+//         alert("La nueva contraseña y la confirmación no coinciden. Por favor, inténtalo de nuevo.");
+//         return;
+//     }
 
-    // Define los datos que se enviarán al servidor
-    const datos = {
-        id_usuario: idUsuario,
-        contraseña: nuevaClave,
-    };
+//     // Define los datos que se enviarán al servidor
+//     const datos = {
+//         id_usuario: idUsuario,
+//         contraseña: nuevaClave,
+//     };
 
-    // Realiza la solicitud de cambio de contraseña utilizando fetch
-    fetch(`http://127.0.0.1:5000/cambiarclave`, {
-        method: 'POST', // Puedes utilizar POST u otro método según la configuración de tu servidor
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(datos), // Convierte los datos a formato JSON
-    })
-    .then((response) => {
+//     // Realiza la solicitud de cambio de contraseña utilizando fetch
+//     fetch(`http://127.0.0.1:5000/cambiarclave`, {
+//         method: 'POST', // Puedes utilizar POST u otro método según la configuración de tu servidor
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(datos), // Convierte los datos a formato JSON
+//     })
+//     .then((response) => {
+//         if (!response.ok) {
+//             throw new Error('Error al cambiar la contraseña');
+//         }
+        
+//         return response.json();
+//     })
+//     .then((data) => {
+//         // Contraseña cambiada exitosamente, puedes mostrar un mensaje de éxito aquí
+//         alert("Contraseña cambiada exitosamente");
+//         console.log('Contraseña cambiada exitosamente', data);
+
+//         // Cierra la ventana modal de cambio de contraseña si es necesario
+//         const modal = document.getElementById("modal-clave");
+//         modal.style.display = "none";
+
+//         // Limpia los campos de contraseña si es necesario
+//         document.getElementById("nuevaclave").value = "";
+//         document.getElementById("confirmacion").value = "";
+
+//         // Puedes realizar otras acciones aquí, como redirigir al usuario o actualizar los datos en el frontend
+//     })
+//     .catch((error) => {
+//         console.error('Error al cambiar la contraseña', error);
+//         // Puedes mostrar un mensaje de error al usuario u otras acciones en caso de error
+//     });
+// }
+
+async function cambiarClave(nuevaClave, confirmacion) {
+    try {
+        const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+
+        if (nuevaClave !== confirmacion) {
+            // Las contraseñas no coinciden, puedes mostrar un mensaje de error aquí
+            alert("La nueva contraseña y la confirmación no coinciden. Por favor, inténtalo de nuevo.");
+            return;
+        }
+
+        // Define los datos que se enviarán al servidor
+        const datos = {
+            id_usuario: idUsuario,
+            contraseña: nuevaClave,
+        };
+
+        // Realiza la solicitud de cambio de contraseña utilizando fetch con await
+        const response = await fetch(`http://127.0.0.1:5000/cambiarclave`, {
+            method: 'POST', // Puedes utilizar POST u otro método según la configuración de tu servidor
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(datos), // Convierte los datos a formato JSON
+        });
+
         if (!response.ok) {
             throw new Error('Error al cambiar la contraseña');
         }
-        
-        return response.json();
-    })
-    .then((data) => {
+
         // Contraseña cambiada exitosamente, puedes mostrar un mensaje de éxito aquí
         alert("Contraseña cambiada exitosamente");
-        console.log('Contraseña cambiada exitosamente', data);
 
         // Cierra la ventana modal de cambio de contraseña si es necesario
         const modal = document.getElementById("modal-clave");
@@ -247,12 +403,12 @@ function cambiarClave(nuevaClave, confirmacion) {
         document.getElementById("confirmacion").value = "";
 
         // Puedes realizar otras acciones aquí, como redirigir al usuario o actualizar los datos en el frontend
-    })
-    .catch((error) => {
+    } catch (error) {
         console.error('Error al cambiar la contraseña', error);
         // Puedes mostrar un mensaje de error al usuario u otras acciones en caso de error
-    });
+    }
 }
+
 
 document.getElementById("guardarClave").addEventListener("click", function () {
     const nuevaClave = document.getElementById("nuevaclave").value;

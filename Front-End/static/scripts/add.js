@@ -140,8 +140,6 @@ function showMessages() {
    
 }
 
-
-
 // Botón de cierre para la ventana modal de servidor
 document.getElementById('closeServerModal').addEventListener('click', () => {
     serverModal.style.display = 'none';
@@ -151,3 +149,6 @@ document.getElementById('closeServerModal').addEventListener('click', () => {
 document.getElementById('closeChannelModal').addEventListener('click', () => {
     channelModal.style.display = 'none';
 });
+
+
+

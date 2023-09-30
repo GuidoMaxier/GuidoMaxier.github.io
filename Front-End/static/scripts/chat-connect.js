@@ -26,23 +26,42 @@ window.addEventListener('load', function () {
 
 ///////////////////////// READ ////////////////////////////
 // Función para obtener los datos del usuario desde la API y actualizar el formulario
-function obtenerDatosUsuarioDesdeAPI(idUsuario) {
-    const url = `http://127.0.0.1:5000/${idUsuario}`;
+// function obtenerDatosUsuarioDesdeAPI(idUsuario) {
+//     const url = `http://127.0.0.1:5000/${idUsuario}`;
     
-    return fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Error al obtener los datos del usuario desde la API');
-        }
+//     return fetch(url)
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error('Error al obtener los datos del usuario desde la API');
+//         }
         
-        return response.json();
-      })
-      .then((data) => {
-        // Actualiza los campos del formulario con los nuevos datos
-        displayProfileData(data);
-      });
-}
-
+//         return response.json();
+//       })
+//       .then((data) => {
+//         // Actualiza los campos del formulario con los nuevos datos
+//         displayProfileData(data);
+//       });
+// }
+async function obtenerDatosUsuarioDesdeAPI(idUsuario) {
+    const url = `http://127.0.0.1:5000/${idUsuario}`;
+  
+    try {
+      const response = await fetch(url);
+  
+      if (!response.ok) {
+        throw new Error('Error al obtener los datos del usuario desde la API');
+      }
+  
+      const data = await response.json();
+  
+      // Actualiza los campos del formulario con los nuevos datos
+      displayProfileData(data);
+    } catch (error) {
+      console.error(error.message); // Maneja errores si ocurren
+    }
+  }
+  
+  
 ///////////////////////// READ ////////////////////////////
 function displayProfileData(Data) {
     // Asignar los datos del usuario a los campos de entrada

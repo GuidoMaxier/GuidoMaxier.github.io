@@ -17,8 +17,8 @@ window.addEventListener('load', function () {
 });
 
 
-const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
-obtenerDatosUsuarioDesdeAPI(idUsuario)
+// const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+// obtenerDatosUsuarioDesdeAPI(idUsuario)
 
 ///////////////////////// READ ////////////////////////////
 // Función para obtener los datos del usuario desde la API y actualizar el formulario
@@ -34,12 +34,8 @@ function obtenerDatosUsuarioDesdeAPI(idUsuario) {
         return response.json();
       })
       .then((data) => {
-        // Actualiza los campos del formulario con los nuevos datos
         displayProfileData(data);
-        // document.querySelector('input[name="nombre"]').value = data.nombre;
-        // document.querySelector('input[name="apellido"]').value = data.apellido;
-        // document.querySelector('input[name="email"]').value = data.email;
-        // document.querySelector('input[name="username"]').value = data.username;
+  
       });
 }
 
@@ -56,7 +52,7 @@ function displayProfileData(Data) {
     document.getElementById("imagen_perfil").src = Data.ruta_imagen_perfil;
 
 
-        // Asignar la ruta de la imagen de perfil al elemento de vista previa
+    // Asignar la ruta de la imagen de perfil al elemento de vista previa
     document.getElementById("imagen_perfil_preview").src = Data.ruta_imagen_perfil;
     document.getElementsByName("username")[0].textContent = Data.username;
     document.getElementsByName("id_usuario")[0].textContent = "#" + Data.id_usuario;
@@ -134,7 +130,6 @@ function eliminarUsuario() {
 }
 
   
- 
 
 ////////////////////// UPDATE DATOS PERFIL //////////////////////
 document.getElementById('Guardar-Cambios').addEventListener('click', (event) => {

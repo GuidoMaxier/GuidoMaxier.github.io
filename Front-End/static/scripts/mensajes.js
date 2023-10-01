@@ -126,3 +126,65 @@ function enviarMensaje(canalId, usuarioId, contenido, fecha) {
         console.error('Error al enviar el mensaje:', error);
       });
   }
+
+
+
+
+  async function eliminarMensaje(idMensaje) {
+    try {
+        // Mostrar un cuadro de diálogo de confirmación
+        const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este mensaje? Esta acción no se puede deshacer.');
+
+        if (confirmacion) {
+            // Obtener el ID del usuario desde localStorage
+            //const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+
+            // Realizar la solicitud DELETE al backend con la URL correcta
+            const response = await fetch(`http://127.0.0.1:5000/mensaje/${idMensaje}`, {
+                method: 'DELETE',
+            });
+
+            if (response.status === 204) {
+                //alert('Entro?'+idMensaje)
+                // Usuario eliminado exitosamente, redireccionar a index.html o realizar cualquier otra acción necesaria
+                //localStorage.removeItem('userData');
+                //window.location.href = "./index.html";
+            } else {
+                // Manejar errores aquí
+                console.error('Error al eliminar el mensaje');
+            }
+        }
+    } catch (error) {
+        console.error('Error al comunicarse con el backend', error);
+    }
+}
+
+
+async function editarMensaje(idMensaje) {
+  try {
+      // Mostrar un cuadro de diálogo de confirmación
+      const confirmacion = window.confirm('¿Estás seguro de que quieres editar este mensaje? Esta acción no se puede deshacer.');
+
+      if (confirmacion) {
+          // Obtener el ID del usuario desde localStorage
+          //const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+
+          // Realizar la solicitud DELETE al backend con la URL correcta
+          const response = await fetch(`http://127.0.0.1:5000/mensaje/${idMensaje}`, {
+              method: 'PUT',
+          });
+
+          if (response.status === 200) {
+              //alert('Entro?'+idMensaje)
+              // Usuario eliminado exitosamente, redireccionar a index.html o realizar cualquier otra acción necesaria
+              //localStorage.removeItem('userData');
+              //window.location.href = "./index.html";
+          } else {
+              // Manejar errores aquí
+              console.error('Error al editar el mensaje');
+          }
+      }
+  } catch (error) {
+      console.error('Error al comunicarse con el backend', error);
+  }
+}

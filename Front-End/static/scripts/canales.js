@@ -1,3 +1,14 @@
+
+class Canal {
+    constructor(nombre, servidorId) {
+      this.nombre = nombre;
+      this.servidorId = servidorId;
+    }
+  }
+  
+
+
+
 // function cargarCanales(serverId) {
 //   // Limpiar la lista de canales existentes
 //   channelList.innerHTML = '';

@@ -1,3 +1,13 @@
+class Servidor {
+  constructor(nombre, descripcion, fechaCreacion) {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.fechaCreacion = fechaCreacion;
+  }
+}
+
+
+
 // window.addEventListener('load', function () {
 //   // Comprobar si `userData` está en localStorage y contiene datos del usuario
 //   const storedUserData = localStorage.getItem('userData');

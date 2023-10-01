@@ -22,23 +22,28 @@ messageText.addEventListener('keypress', (e) => {
 
 // Función para obtener la fecha y hora en el formato deseado
 function getDateTime() {
-    const currentTime = new Date();
-    const year = currentTime.getFullYear();
-    const month = (currentTime.getMonth() + 1).toString().padStart(2, '0');
-    const day = currentTime.getDate().toString().padStart(2, '0');
-    const hours = currentTime.getHours().toString().padStart(2, '0');
-    const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-    return `${day}-${month}-${year} ${hours}:${minutes}`;
+    const currentDate = new Date();
+
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    const hours = currentDate.getHours().toString().padStart(2, '0');
+    const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+    const seconds = currentDate.getSeconds().toString().padStart(2, '0');
+
+    const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+    return formattedDateTime
 }
 
 // Función para enviar un mensaje
 function sendMessage() {
     const message = messageText.value.trim();
     if (message !== '') {
-        //const dateTime = getDateTime();
-        const currentDate = new Date().toISOString().slice(0, 10); // AAAA-MM-DD
+        const dateTime = getDateTime();
+        //const currentDate = new Date().toISOString().slice(0, 10); // AAAA-MM-DD
 
-        enviarMensaje(canalId, idUsuario, message, currentDate);
+        enviarMensaje(canalId, idUsuario, message, dateTime);
 
         //addMessage('../assets/monkey.png', 'Usuario Actual', message, dateTime);
         messageText.value = '';

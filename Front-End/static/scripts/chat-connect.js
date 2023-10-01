@@ -195,7 +195,7 @@ async function eliminarUsuario() {
                 method: 'DELETE',
             });
 
-            if (response.status === 200) {
+            if (response.status === 204) {
                 // Usuario eliminado exitosamente, redireccionar a index.html o realizar cualquier otra acción necesaria
                 localStorage.removeItem('userData');
                 window.location.href = "./index.html";

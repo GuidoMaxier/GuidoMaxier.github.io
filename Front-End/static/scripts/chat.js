@@ -84,8 +84,13 @@ function addMessage(avatarSrc, userName, messageText, messageTime, id_mensaje) {
     editButton.textContent = 'Editar';
     
     editButton.addEventListener('click', () => {
+
+
         if (editButton.textContent === 'Editar') {
             // Habilitar la edición del mensaje
+            alert('Este es el id: '+id_mensaje);
+            editarMensaje(idMensaje);
+            
             messageElement.contentEditable = true;
             messageElement.classList.add('editable');
             messageElement.focus();
@@ -115,6 +120,11 @@ function addMessage(avatarSrc, userName, messageText, messageTime, id_mensaje) {
     deleteButton.textContent = 'Eliminar';
     deleteButton.addEventListener('click', () => {
         // Lógica para eliminar el mensaje aquí
+       // function elimilnar msj...
+
+        alert('Este es el id: '+id_mensaje);
+        eliminarMensaje(id_mensaje);
+        
         chatContainer.removeChild(message);
         //llamamos a la fetch para que elimine el msj de la base de datos le tenemos 
         // mandar el id del mensaje

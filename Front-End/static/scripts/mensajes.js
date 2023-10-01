@@ -1,3 +1,14 @@
+class Mensaje {
+  constructor(canalId, usuarioId, contenido, fecha) {
+    this.canalId = canalId;
+    this.usuarioId = usuarioId;
+    this.contenido = contenido;
+    this.fecha = fecha;
+  }
+}
+
+
+
 
 function cargarMensajesEnChat() {
     const chatElement = document.getElementById("chat");

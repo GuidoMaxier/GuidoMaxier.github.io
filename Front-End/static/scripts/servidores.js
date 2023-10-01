@@ -19,7 +19,7 @@
 const serverNameElement = document.querySelector('.server_name');
 
 // Cambiar el contenido del elemento a la nueva palabra
-serverNameElement.querySelector('p').textContent = 'NuevaPalabra';
+serverNameElement.querySelector('p').textContent = 'Servidor';
 
 ////////////// READ SERVIDORES //////////////////////////
 // function cargarServidores(idUsuario) {

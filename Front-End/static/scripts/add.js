@@ -56,7 +56,7 @@ document.getElementById('createServer').addEventListener('click', () => {
         const serverData = {
             nombre: newServerName,
             descripcion: "generica",
-            fecha_creacion: '2020-12-12',//currentDate,
+            fecha_creacion: currentDate,
             id_usuario: usuarioId,
           };
 

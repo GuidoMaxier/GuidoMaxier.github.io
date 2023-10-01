@@ -14,8 +14,6 @@ document.getElementById('close-container').addEventListener('click', () => {
 
 
 
-
-
 let currentPhoto = "";
     
 function openModal(photoName) {
@@ -31,6 +29,7 @@ function closeModal() {
     
 function confirmation() {
     lert(`Te has unido al servidor ${currentPhoto}`);
+    
     closeModal();
 }
 

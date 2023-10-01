@@ -160,31 +160,42 @@ function enviarMensaje(canalId, usuarioId, contenido, fecha) {
 }
 
 
-async function editarMensaje(idMensaje) {
+async function editarMensaje(idMensaje, nuevoContenido) {
   try {
-      // Mostrar un cuadro de diálogo de confirmación
-      const confirmacion = window.confirm('¿Estás seguro de que quieres editar este mensaje? Esta acción no se puede deshacer.');
+    // Mostrar un cuadro de diálogo de confirmación
+    const confirmacion = window.confirm('¿Estás seguro de que quieres editar este mensaje? Esta acción no se puede deshacer.');
 
-      if (confirmacion) {
-          // Obtener el ID del usuario desde localStorage
-          //const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+    if (confirmacion) {
+      // URL para editar un mensaje específico
+      const url = `http://127.0.0.1:5000/mensaje/${idMensaje}`;
 
-          // Realizar la solicitud DELETE al backend con la URL correcta
-          const response = await fetch(`http://127.0.0.1:5000/mensaje/${idMensaje}`, {
-              method: 'PUT',
-          });
+      // Crear un objeto con los datos del mensaje editado
+      const mensajeEditado = {
+        contenido: nuevoContenido, // Aquí debes pasar el nuevo contenido del mensaje
+      };
 
-          if (response.status === 200) {
-              //alert('Entro?'+idMensaje)
-              // Usuario eliminado exitosamente, redireccionar a index.html o realizar cualquier otra acción necesaria
-              //localStorage.removeItem('userData');
-              //window.location.href = "./index.html";
-          } else {
-              // Manejar errores aquí
-              console.error('Error al editar el mensaje');
-          }
+      // Configurar la solicitud PUT
+      const requestOptions = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(mensajeEditado),
+      };
+
+      // Realizar la solicitud PUT al servidor
+      const response = await fetch(url, requestOptions);
+
+      if (response.status === 200) {
+        // Mensaje editado exitosamente, realiza cualquier otra acción necesaria
+        console.log('Mensaje editado exitosamente');
+        cargarMensajesEnChat(); // Recarga los mensajes en el chat
+      } else {
+        // Manejar errores aquí
+        console.error('Error al editar el mensaje');
       }
+    }
   } catch (error) {
-      console.error('Error al comunicarse con el backend', error);
+    console.error('Error al comunicarse con el backend', error);
   }
 }

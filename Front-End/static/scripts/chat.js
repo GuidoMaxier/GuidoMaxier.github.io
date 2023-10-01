@@ -88,8 +88,7 @@ function addMessage(avatarSrc, userName, messageText, messageTime, id_mensaje) {
 
         if (editButton.textContent === 'Editar') {
             // Habilitar la edición del mensaje
-            alert('Este es el id: '+id_mensaje);
-            editarMensaje(idMensaje);
+            
             
             messageElement.contentEditable = true;
             messageElement.classList.add('editable');
@@ -102,7 +101,11 @@ function addMessage(avatarSrc, userName, messageText, messageTime, id_mensaje) {
             const newMessage = messageElement.textContent.trim();
             if (newMessage !== '') {
                 // Actualizar el contenido del mensaje
+                alert('Este es el id: '+id_mensaje);
+                editarMensaje(id_mensaje,messageElement.textContent);
                 messageElement.textContent = newMessage;
+
+
                 // Deshabilitar la edición
                 messageElement.contentEditable = false;
                 messageElement.classList.remove('editable');

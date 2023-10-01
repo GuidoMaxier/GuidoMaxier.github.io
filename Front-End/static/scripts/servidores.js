@@ -268,7 +268,7 @@ async function buscarServidores(buscador) {
       throw new Error('Error al obtener la lista de servidores');
     }
 
-    const data = await response.json();
+    const servers = await response.json();
 
     
     
@@ -299,10 +299,10 @@ async function buscarServidores(buscador) {
 
       // Agregar un evento click al nuevo servidor
       newServerItem.addEventListener('click', async (event) => {
-        serverId-S = event.currentTarget.dataset.serverId;
+        serverId_S = event.currentTarget.dataset.serverId;
 
         // Imprime el valor en la consola o haz lo que necesites con él
-        console.log('Valor de data-server-id:', serverId-S);
+        console.log('Valor de data-server-id:', serverId_S);
       });
     });
   } catch (error) {

@@ -1,4 +1,4 @@
 var serverId;
 var canalId;
 var mensajeId;
-var serverId-S;
+var serverId_S;

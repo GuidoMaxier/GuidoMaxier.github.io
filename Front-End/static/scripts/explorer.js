@@ -33,3 +33,23 @@ function confirmation() {
     closeModal();
 }
 
+
+
+const searchInput = document.querySelector('.search2');
+
+// Agregar un evento keydown al input de búsqueda
+searchInput.addEventListener('keydown', function (event) {
+  // Verificar si la tecla presionada es "Enter" (código 13)
+  if (event.keyCode === 13) {
+    // Obtener el valor del input
+    
+    const buscador = searchInput.value;
+    alert('Alerta'+ buscador)
+    
+    // Llamar a la función cargarServidores con el valor
+    buscarServidores(buscador);
+
+    // Limpiar el input después de presionar "Enter" (opcional)
+    searchInput.value = '';
+  }
+});

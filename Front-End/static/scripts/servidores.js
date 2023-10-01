@@ -239,3 +239,113 @@ async function crearServidor(serverData) {
     console.error(error.message); // Maneja errores si ocurren
   }
 }
+
+
+
+
+
+
+async function buscarServidores(buscador) {
+  try {
+    // Limpiar la lista de servidores existentes
+    serverList.innerHTML = '';
+
+    // Crear un objeto de datos con la frase de búsqueda
+    const searchData = {
+      busqueda: buscador
+    };
+
+    const response = await fetch('http://127.0.0.1:5000/servidor/buscar-servidores/', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(searchData)
+    });
+
+    if (!response.ok) {
+      throw new Error('Error al obtener la lista de servidores');
+    }
+
+    const data = await response.json();
+
+    
+    
+    // Recorrer la lista de servidores y crear elementos HTML para cada uno de ellos
+      servers.forEach((server) => {
+      const newServerItem = document.createElement('div');
+      newServerItem.classList.add('profile1');
+
+      // Almacenar el id_servidor como un atributo personalizado
+      newServerItem.dataset.serverId = server.id_servidor;
+
+      const serverIcon = document.createElement('p');
+      serverIcon.textContent = server.nombre[0];
+
+      const whiteLine = document.createElement('div');
+      whiteLine.classList.add('white_line');
+
+      const hoverText = document.createElement('div');
+      hoverText.classList.add('hover');
+      hoverText.textContent = server.nombre;
+
+      newServerItem.appendChild(serverIcon);
+      newServerItem.appendChild(whiteLine);
+      newServerItem.appendChild(hoverText);
+
+      // Agregar el nuevo servidor a la lista de servidores en el frontend
+      serverListSearch.appendChild(newServerItem);
+
+      // Agregar un evento click al nuevo servidor
+      newServerItem.addEventListener('click', async (event) => {
+        serverId-S = event.currentTarget.dataset.serverId;
+
+        // Imprime el valor en la consola o haz lo que necesites con él
+        console.log('Valor de data-server-id:', serverId-S);
+      });
+    });
+  } catch (error) {
+    console.error(error.message); // Maneja errores si ocurrieron
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //if (Array.isArray(data) && data.length > 0) {
+      //noShowServers();
+    //} else {
+      // Mostrar un mensaje cuando no se encuentran servidores
+      //showNoResultsMessage();
+    //}
+
+    // Resto del código para mostrar los servidores, igual que antes
+    // ...
+  //} catch (error) {
+    //console.error(error.message); // Maneja errores si ocurrieron
+  //}
+//}
+
+
+// Función para mostrar un mensaje cuando no se encuentran servidores
+function showNoResultsMessage() {
+  const noResultsMessage = document.createElement('p');
+  noResultsMessage.textContent = 'No se encontraron servidores con esa frase de búsqueda.';
+  serverList.appendChild(noResultsMessage);
+}

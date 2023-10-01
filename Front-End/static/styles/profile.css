@@ -11,7 +11,8 @@
         .container-p {
             max-width: 350px;
             margin: 0 auto;
-            background-color: #0e64faf1;
+            /*background-color: #0e64faf1;*/
+            background-color: #42464d;
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -102,7 +103,8 @@
 
         /* contener padre de profile */
         .modal-content-p { 
-        background-color: #91d9ebe5;
+        /*background-color: #91d9ebe5;*/
+        background-color: #42464d;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         position: absolute;
@@ -174,7 +176,7 @@
         }
 
         .boton-red {
-            background-color: #c50b0b;
+            background-color: #c50b0b;     
             color: rgb(255, 255, 255);
             }
 
@@ -269,7 +271,9 @@ cambiar-clave-form label{
 
 /* Estilo para el contenedor de cada par de label e input */
 .form-group {
-    background-color: #c50b0b;
+    /*background-color: #c50b0b;*/
+    background-color: #42464d;
+
     display: flex;
     align-items: center;
     justify-content: space-between; /* Alinea label a la izquierda e input a la derecha */

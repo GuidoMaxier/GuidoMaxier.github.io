@@ -248,7 +248,7 @@ async function crearServidor(serverData) {
 async function buscarServidores(buscador) {
   try {
     // Limpiar la lista de servidores existentes
-    serverList.innerHTML = '';
+    serverListSearch.innerHTML = '';
 
     // Crear un objeto de datos con la frase de búsqueda
     const searchData = {

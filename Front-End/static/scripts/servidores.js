@@ -274,25 +274,32 @@ async function buscarServidores(buscador) {
     
     // Recorrer la lista de servidores y crear elementos HTML para cada uno de ellos
       servers.forEach((server) => {
+
       const newServerItem = document.createElement('div');
-      newServerItem.classList.add('profile1');
+      newServerItem.classList.add('photoIMG');
 
       // Almacenar el id_servidor como un atributo personalizado
       newServerItem.dataset.serverId = server.id_servidor;
 
-      const serverIcon = document.createElement('p');
-      serverIcon.textContent = server.nombre[0];
 
-      const whiteLine = document.createElement('div');
-      whiteLine.classList.add('white_line');
+      const serverImg = document.createElement('img');
+      serverImg.src = "https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0";
+
+      const serverIcon = document.createElement('p');
+      serverIcon.textContent = server.nombre;
+
+      // const whiteLine = document.createElement('div');
+      // whiteLine.classList.add('white_line');
 
       const hoverText = document.createElement('div');
       hoverText.classList.add('hover');
       hoverText.textContent = server.nombre;
 
       newServerItem.appendChild(serverIcon);
-      newServerItem.appendChild(whiteLine);
+      // newServerItem.appendChild(whiteLine);
+      newServerItem.appendChild(serverImg);
       newServerItem.appendChild(hoverText);
+  
 
       // Agregar el nuevo servidor a la lista de servidores en el frontend
       serverListSearch.appendChild(newServerItem);

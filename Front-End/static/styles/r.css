@@ -1,0 +1,35 @@
+.containerIMG {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Ajusta el espaciado y alineación según tus necesidades */
+    max-width: 90%;
+    padding: 10px; /* Espacio entre elementos, puedes ajustarlo según tu diseño */
+}
+
+.photoIMG {
+    flex: 0 0 calc(33.33% - 20px); /* Tamaño de cada elemento, ajusta el porcentaje y el espaciado */
+    margin: 10px; /* Espacio entre elementos, ajusta según tu diseño */
+    text-align: center;
+}
+
+.photoIMG img {
+    /* max-width: 100%;
+    height: auto; */
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    border: 2px solid #000;     
+}
+
+@media screen and (max-width: 768px) {
+    .photoIMG {
+        flex: 0 0 calc(50% - 20px); /* Cambiar a 2 columnas en pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .photoIMG {
+        flex: 0 0 calc(100% - 20px); /* Cambiar a 1 columna en pantallas aún más pequeñas */
+    }
+}

@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../static/styles/addServer.css">
         <link rel="stylesheet" href="../static/styles/explorer.css">
         <link rel="stylesheet" href="../static/styles/profile.css">
+        <link rel="stylesheet" href="../static/styles/r.css">
 
       
     </head>
@@ -258,10 +259,15 @@
             
     
             <div class="photo-row">
+
+
                 <div class="photo" onclick="openModal('Python')">
                     <img src="../assets/python.png" alt="Python">
                     <p>Python</p>
                 </div>
+
+
+                
                 <div class="photo" onclick="openModal('GitHub')">
                     <img src="../assets/github.png" alt="GitHub">
                     <p>GitHub</p>
@@ -285,11 +291,13 @@
                     <p>Java</p>
                 </div>
 
-                <div id="serverListSearch">
-                    <!-- Aquí se agregarán los elementos -->
-                </div>
-
             </div>
+
+
+             <div class="containerIMG" id="serverListSearch">
+                    <!-- Aquí se agregarán los elementos -->
+            </div>
+
     
             <!--Ventana modal para unirse a un servidor del explorador-->
             <div id="modal_e" class="modal_e">

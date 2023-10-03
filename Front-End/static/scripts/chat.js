@@ -54,6 +54,7 @@ function sendMessage() {
 
 // Función para agregar un mensaje
 function addMessage(avatarSrc, userName, messageText, messageTime, id_mensaje) {
+
     // Crea un nuevo mensaje
     const message = document.createElement('div');
     message.classList.add('message');

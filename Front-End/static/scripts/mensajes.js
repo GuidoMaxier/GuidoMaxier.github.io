@@ -25,7 +25,13 @@ async function cargarMensajesEnChat() {
 
     if (cantidadMensajes < mensajes.length){
       // Recorrer los mensajes y agregarlos al chat
+
+      const chatContainer = document.getElementById('chat')
+
+      chatContainer.innerHTML = '';
+
       cantidadMensajes = mensajes.length;
+
       for (const mensaje of mensajes) {
         try {
           const datosUsuario = await obtenerDatosUsuario(mensaje.usuario_id);

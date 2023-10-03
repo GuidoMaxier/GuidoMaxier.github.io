@@ -169,7 +169,9 @@ async function cargarCanales(serverId) {
 
               //cargarMensajes(canalId);
               showMessages();
+              cantidadMensajes=0;
               cargarMensajesEnChat();
+
               // obtenerMensaje();
 
           });

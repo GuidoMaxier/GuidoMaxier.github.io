@@ -8,126 +8,125 @@ class Mensaje {
 }
 
 
+async function cargarMensajesEnChat() {
+  const chatElement = document.getElementById("chat");
 
+  // ID del canal del que deseas cargar los mensajes
+  // Reemplaza con el ID del canal deseado
+  // const canalId = obtenerCanalId(); // Asegúrate de obtener el canalId de alguna manera
 
-function cargarMensajesEnChat() {
-    const chatElement = document.getElementById("chat");
-  
-    // Limpiar el chat actual (si es necesario)
-    chatElement.innerHTML = "";
-  
-    // ID del canal del que deseas cargar los mensajes
-    // Reemplaza con el ID del canal deseado
-  
+  try {
     // Realizar una solicitud al servidor para obtener los mensajes del canal
-    fetch(`http://127.0.0.1:5000/mensaje/canal/${canalId}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Error al obtener mensajes');
-        }
-        return response.json();
-      })
-      .then((mensajes) => {
-        // Recorrer los mensajes y agregarlos al chat
-        mensajes.forEach((mensaje) => {
+    const response = await fetch(`http://127.0.0.1:5000/mensaje/canal/${canalId}`);
+    if (!response.ok) {
+      throw new Error('Error al obtener mensajes');
+    }
+    const mensajes = await response.json();
 
-         obtenerDatosUsuario(mensaje.usuario_id)
-            .then((datosUsuario) => {
-                //console.log(datosUsuario); // Aquí puedes acceder a los datos del usuario
+    if (cantidadMensajes < mensajes.length){
+      // Recorrer los mensajes y agregarlos al chat
+      cantidadMensajes = mensajes.length;
+      for (const mensaje of mensajes) {
+        try {
+          const datosUsuario = await obtenerDatosUsuario(mensaje.usuario_id);
 
-                const avatarSrc = datosUsuario.ruta_imagen_perfil;
-                const userName = datosUsuario.username;
-                const messageTime = mensaje.fecha;
-                const messageText = mensaje.contenido;
-                const id_mensaje = mensaje.id_mensaje;
-
-
-                addMessage(avatarSrc, userName, messageText, messageTime, id_mensaje)
-
-
-                // const mensajeElement = document.createElement("div");
-
-                // mensajeElement.classList.add("mensaje");
-                // mensajeElement.textContent = `${datosUsuario.username}: ${mensaje.contenido}`;
+          const avatarSrc = datosUsuario.ruta_imagen_perfil;
+          const userName = datosUsuario.username;
+          const messageTime = mensaje.fecha;
+          const messageText = mensaje.contenido;
+          const id_mensaje = mensaje.id_mensaje;
         
-                // chatElement.appendChild(mensajeElement);
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+          addMessage(avatarSrc, userName, messageText, messageTime, id_mensaje);
 
-        });
-      })
-      .catch((error) => {
-        console.error("Error al obtener mensajes:", error);
-      });
-          // Actualiza el chat automáticamente cada 1 segundos
-    // setInterval(obtenerMensajes, 1000); // 1000 ms = 1 segundos
+          // Desplázate al final del chat después de agregar un mensaje
+          chatElement.scrollTop = chatElement.scrollHeight;
+
+
+          
+        } catch (error) {
+          console.error(error);
+        }
+      }
   }
+
+    // Desplázate al final del chat después de cargar todos los mensajes
+    chatElement.scrollTop = chatElement.scrollHeight;
+  } catch (error) {
+    console.error("Error al obtener mensajes:", error);
+  }
+}
+
   
+
+ // Llama a la función cada 10 segundos
+setInterval(cargarMensajesEnChat, 6000);
+
+
   // Llamar a la función para cargar los mensajes en el chat
-//   cargarMensajesEnChat();
+// cargarMensajesEnChat();
+
+
 
 // Función para obtener los datos del usuario desde la API y actualizar el formulario
-function obtenerDatosUsuario(idUsuario) {
-    const url = `http://127.0.0.1:5000/${idUsuario}`;
-    
-    return fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Error al obtener los datos del usuario desde la API');
-        }
-        
-        return response.json();
-      })
-      .then((data) => {
-        // Actualiza los campos del formulario con los nuevos datos
-        return data
-      });
-}
-  
+async function obtenerDatosUsuario(idUsuario) {
+  const url = `http://127.0.0.1:5000/${idUsuario}`;
 
-function enviarMensaje(canalId, usuarioId, contenido, fecha) {
-    const url = 'http://127.0.0.1:5000/mensaje/'; // Reemplaza con la URL correcta de tu backend
-  
-    // Crear un objeto con los datos del mensaje
-    const mensajeData = {
-      canal_id: canalId,
-      usuario_id: usuarioId,
-      contenido: contenido,
-      fecha: fecha
-    };
+  try {
+    const response = await fetch(url);
 
-    console.log(mensajeData);
+    if (!response.ok) {
+      throw new Error('Error al obtener los datos del usuario desde la API');
+    }
 
-    // Configurar la solicitud POST
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(mensajeData),
-    };
-  
-    // Realizar la solicitud POST al servidor
-    fetch(url, requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Error al enviar el mensaje al servidor');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // Los datos de respuesta desde el servidor, si los hay, estarán disponibles aquí
-        cargarMensajesEnChat();
-        console.log('Mensaje enviado exitosamente:', data);
-      })
-      .catch((error) => {
-        console.error('Error al enviar el mensaje:', error);
-      });
+    const data = await response.json();
+
+    // Actualiza los campos del formulario con los nuevos datos
+    return data;
+  } catch (error) {
+    console.error('Error al obtener los datos del usuario:', error);
+    throw error; // Puedes volver a lanzar el error para que sea manejado en un nivel superior si es necesario
   }
+}
 
+  
 
+async function enviarMensaje(canalId, usuarioId, contenido, fecha) {
+  const url = 'http://127.0.0.1:5000/mensaje/'; // Reemplaza con la URL correcta de tu backend
+
+  // Crear un objeto con los datos del mensaje
+  const mensajeData = {
+    canal_id: canalId,
+    usuario_id: usuarioId,
+    contenido: contenido,
+    fecha: fecha
+  };
+
+  console.log(mensajeData);
+
+  // Configurar la solicitud POST
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(mensajeData),
+  };
+
+  try {
+    // Realizar la solicitud POST al servidor
+    const response = await fetch(url, requestOptions);
+    if (!response.ok) {
+      throw new Error('Error al enviar el mensaje al servidor');
+    }
+    const data = await response.json();
+
+    // Los datos de respuesta desde el servidor, si los hay, estarán disponibles aquí
+    await cargarMensajesEnChat();
+    console.log('Mensaje enviado exitosamente:', data);
+  } catch (error) {
+    console.error('Error al enviar el mensaje:', error);
+  }
+}
 
 
   async function eliminarMensaje(idMensaje) {

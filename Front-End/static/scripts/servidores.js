@@ -183,8 +183,8 @@ async function buscarServidores(buscador) {
       const serverImg = document.createElement('img');
       serverImg.src = "https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0";
 
-      const serverIcon = document.createElement('p');
-      serverIcon.textContent = server.nombre.substring(0, 7);
+      const serverName = document.createElement('p');
+      serverName.textContent = server.nombre;
 
       // const whiteLine = document.createElement('div');
       // whiteLine.classList.add('white_line');
@@ -193,9 +193,10 @@ async function buscarServidores(buscador) {
       hoverText.classList.add('hover');
       hoverText.textContent = server.nombre;
 
-      newServerItem.appendChild(serverIcon);
+      //newServerItem.appendChild(serverIcon);
       // newServerItem.appendChild(whiteLine);
       newServerItem.appendChild(serverImg);
+      newServerItem.appendChild(serverName);
       newServerItem.appendChild(hoverText);
   
 

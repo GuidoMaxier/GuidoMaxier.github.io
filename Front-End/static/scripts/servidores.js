@@ -252,7 +252,7 @@ async function joinServer() {
               rol: 'usuario'
           };
       // Realizar la solicitud de fetch aquí
-      const response = await fetch("/userserver/join_server", {
+      const response = await fetch("http://127.0.0.1:5000/userserver/", {
           method: "POST", // O el método HTTP adecuado
           headers: {
               "Content-Type": "application/json"
@@ -261,7 +261,7 @@ async function joinServer() {
           body: JSON.stringify(data) // Ajusta los datos según tus necesidades
       });
 
-      if (response.status === 200) {
+      if (response.status === 201) {
           // Puedes procesar la respuesta si es necesario
           return response.json();
       } else {

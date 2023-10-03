@@ -27,14 +27,24 @@ function closeModal() {
     modal.style.display = "none";
 }
     
-function confirmation() {
-    alert(`Te has unido al servidor ${currentPhoto}`);
 
-        //unirse al servidor llamar al fetch
-    
+function confirmation() {   
+
+    // Realizar la solicitud de fetch para unirse al servidor
+    joinServer()
+        .then(response => {
+            // Manejar la respuesta exitosa aquí
+            console.log("Solicitud de unión al servidor exitosa");
+            alert(`Te has unido al servidor ${currentPhoto}`);
+        })
+        .catch(error => {
+            // Manejar errores aquí
+            console.error("Error al unirse al servidor: " + error);
+            alert(error);
+        });
+
     closeModal();
 }
-
 
 
 const searchInput = document.querySelector('.search2');

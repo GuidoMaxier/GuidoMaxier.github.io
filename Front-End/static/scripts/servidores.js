@@ -239,3 +239,35 @@ function showNoResultsMessage() {
   noResultsMessage.textContent = 'No se encontraron servidores con esa frase de búsqueda.';
   serverList.appendChild(noResultsMessage);
 }
+
+
+async function joinServer() {
+  try {
+
+     const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+        // Crear un objeto con los datos a enviar
+            const data = {
+              usuario_id: idUsuario,
+              servidor_id: serverId_S,
+              rol: 'usuario'
+          };
+      // Realizar la solicitud de fetch aquí
+      const response = await fetch("/userserver/join_server", {
+          method: "POST", // O el método HTTP adecuado
+          headers: {
+              "Content-Type": "application/json"
+              // Puedes agregar otros encabezados si es necesario
+          },
+          body: JSON.stringify(data) // Ajusta los datos según tus necesidades
+      });
+
+      if (response.status === 200) {
+          // Puedes procesar la respuesta si es necesario
+          return response.json();
+      } else {
+          throw new Error("Error al unirse al servidor");
+      }
+  } catch (error) {
+      throw error; // Propaga el error para que se maneje en la función `confirmation`
+  }
+}

@@ -28,7 +28,9 @@ function closeModal() {
 }
     
 function confirmation() {
-    lert(`Te has unido al servidor ${currentPhoto}`);
+    alert(`Te has unido al servidor ${currentPhoto}`);
+
+        //unirse al servidor llamar al fetch
     
     closeModal();
 }

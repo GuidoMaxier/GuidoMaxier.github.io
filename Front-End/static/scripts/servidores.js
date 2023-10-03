@@ -184,7 +184,7 @@ async function buscarServidores(buscador) {
       serverImg.src = "https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0";
 
       const serverIcon = document.createElement('p');
-      serverIcon.textContent = server.nombre;
+      serverIcon.textContent = server.nombre.substring(0, 7);
 
       // const whiteLine = document.createElement('div');
       // whiteLine.classList.add('white_line');
@@ -205,6 +205,8 @@ async function buscarServidores(buscador) {
       // Agregar un evento click al nuevo servidor
       newServerItem.addEventListener('click', async (event) => {
         serverId_S = event.currentTarget.dataset.serverId;
+
+        openModal(server.nombre);
 
         // Imprime el valor en la consola o haz lo que necesites con él
         console.log('Valor de data-server-id:', serverId_S);

@@ -184,7 +184,7 @@ async function buscarServidores(buscador) {
       serverImg.src = "https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0";
 
       const serverName = document.createElement('p');
-      serverName.textContent = server.nombre;
+      serverName.textContent = server.nombre; //.substring(0, 7);
 
       // const whiteLine = document.createElement('div');
       // whiteLine.classList.add('white_line');

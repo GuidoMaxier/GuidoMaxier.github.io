@@ -36,6 +36,8 @@ function confirmation() {
             // Manejar la respuesta exitosa aquí
             console.log("Solicitud de unión al servidor exitosa");
             alert(`Te has unido al servidor ${currentPhoto}`);
+            const idUsuario = JSON.parse(localStorage.getItem('userData')).id_usuario;
+            cargarServidores(idUsuario); 
         })
         .catch(error => {
             // Manejar errores aquí

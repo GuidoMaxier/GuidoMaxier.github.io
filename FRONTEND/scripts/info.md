@@ -1,0 +1,1 @@
+ archivos .js con implementación de fetchingy otras funciones.

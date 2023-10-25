@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro con Animaciones</title>
+    <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/login.css">
+    <!-- <link rel="stylesheet" href="../styles/navbar.css"> -->
+    
+</head>
+<body>
+    <header>
+        <h1>Complejo deportivo-La Redonda</h1>
+
+    </header>
+    
+    <nav  class="navbar">
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <ul class="menu" id="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="./reserva.html">Reservas</a></li>
+            <li><a href="./torneos.html">Torneos</a></li>
+            <li><a href="./login.html">Iniciar sesion</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="form-container login-container">
+            <h1>Iniciar Sesión</h1>
+            <form id="login-form" autocomplete="off">
+                <div class="error" id="error-user"></div>
+                <div class="input-container">
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                </div>
+                <div class="error" id="error-pass"></div>
+                <div class="input-container">
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class= "team-button">Ingresar</button>
+            </form>
+            <p class="toggle-form-text">¿No tienes una cuenta? <button class="toggle-form-button-register">Regístrate</button></p>
+        </div>
+
+        
+        <div class="form-container register-container">
+            <div class="exito" id="exito-usuario"></div>
+            <h1>Registro</h1>
+            <form id="register-form" autocomplete="off">
+                <div class="error" id="error-username"></div>
+                <div class="input-container">
+                    <input type="text" id="register-username" name="register-username" placeholder="Usuario" required>
+                </div>
+
+                <div class="error" id="error-firstname"></div>
+                <div class="input-container">
+                    <input type="text" name="firstname" id="register-firstname" placeholder="Nombre" required>
+                </div>
+
+                <div class="error" id="error-lastname"></div>
+                <div class="input-container">
+                    <input type="text" name="lastname" id="register-lastname" placeholder="Apellido" required>
+                </div>
+                
+                <div class="error" id="error-email"></div>
+                <div class="input-container">
+                    <input type="email" name="email" id="register-email" placeholder="Email" required>
+                </div>
+
+                <div class="error" id="error-password"></div>
+                <div class="input-container">
+                    <input type="password" name="password" id="register-password" placeholder="Contraseña" required>
+                </div>
+                
+                <div class="error" id="error-birthdate"></div>
+                <div class="input-container">
+                    <label for="register-birthdate" id="label-date">Fecha de Nacimiento</label>
+                    <input type="date" name="birthdate" id="register-birthdate" placeholder="dd/mm/aaaa"onclick="hideLabel()">
+                </div>
+
+                <button type="submit" class= "team-button">Registrarse</button>
+            </form>
+            <p class="toggle-form-text">¿Ya tienes una cuenta? <button class="toggle-form-button-login">Iniciar Sesión</button></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Derechos de autor &copy; 2023 Mi Página Web</p>
+    </footer>
+    <script src="../scripts/login.js"></script>
+    <script src="../scripts/validation-register.js"></script>
+    <script src="../scripts/navbar.js"></script>
+    
+</body>
+</html>

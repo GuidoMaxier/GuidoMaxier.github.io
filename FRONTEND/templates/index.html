@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO CODO a CODO</title>
+    <!--Enlazar CSS de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/torneos.css">
+    <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <!--consultar con grupo-->
+        <h1>Planeta deportes</h1>
+        <img src="https://www.tenvinilo.com/vinilos-decorativos/img/preview/vinilo-infantil-pelota-futbol-color-1399.png" id="pelota">
+        <h1>Complejo deportivo</h1>
+        <img src="https://w7.pngwing.com/pngs/64/156/png-transparent-tennis-balls-tennis-game-grass-cartoon.png" id="pelota">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="./reserva.html">Reservas</a></li>
+            <li><a href="./torneos.html">Torneos</a></li>
+            <li><a href="./login.html">Iniciar sesion</a></li>
+            <li><a href="#">Registrarse</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="carousel">
+            <!--Carousel con Boostrap-->
+            <div id="carouselComplejo" class="carousel slide">
+                
+                <div class="carousel-inner">
+                   
+                    <div class="carousel-item active">
+                        <img src="../img/predio.jpg" class="d-block w-100" alt="imagen del predio">
+                        <div class="texto_carousel">
+                            <h2 id="titulo_carousel">Nuestro complejo</h2>
+                        </div>
+                        
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/cancha_sintetica_futbol.jpg" class="d-block w-100" alt="imagen cancha futbol">
+                        <div class="texto_carousel">
+                            <h2 id="titulo_carousel">Canchas de Futbol</h2>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/cancha padel.jpg" class="d-block w-100" alt="imagen cancha padel">
+                        <div class="texto_carousel">
+                            <h2 id="titulo_carousel">Canchas de Padel</h2>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/cancha tenis.jpg" class="d-block w-100" alt="imagen cancha tenis">
+                        <div class="texto_carousel">
+                            <h2 id="titulo_carousel">Canchas de Tenis</h2>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselComplejo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselComplejo" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+
+        <section>
+            <h2>Acerca de Nosotros</h2>
+            <p> Somos uno de los complejos mas reconocidos del pais, en donde vas a poder realizar actividades como Fútbol, Padel y Tenis. 
+                Nuestro objetivo es que disfrutes al máximo el deporte al aire libre.</p>
+        </section>
+        
+        <section>
+            <h2>Nuestros Servicios</h2>
+            <ul>
+                <li>Alquiler de canchas. 
+                    <ul>
+                        <li>4 canchas de tenis-2 polvo de ladrillo y 2 de cemento</li>
+                        <li>4 canchas de fútbol-cesped sintetico profesional </li>
+                        <li>4 canchas de padel-cesped sintetico profesional </li>
+                    </ul>
+                </li>
+                <li>Torneos</li>
+                <li>Ademas contamos con restobar, estacionamiento privado y mucho verde para disfrutar del aire libre.</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Derechos de autor &copy; 2023 Mi Página Web</p>
+    </footer>
+
+     <!--Enlazar JS de bootstrap-->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+</body>
+</html>

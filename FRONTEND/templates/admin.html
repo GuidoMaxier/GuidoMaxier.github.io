@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/admin.css">
+    <!-- <link rel="stylesheet" href="../styles/profile.css"> -->
+    <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <button type="button" onclick="profile()"> Profile </button>
+    <button id="logout">Logout</button>
+    <button type="button"> Aregar Canchas</button>
+    <button type="button"> Profile dsad</button>
+    <!-- Ventana modal para Profile -->
+    <div id="profileModal" class="modal-profile">
+        <div class="modal-content-p">
+            <span class="close" id="closeProfile" onclick="cerrarModalProfile()">⊗</span>
+
+            <div class="container-profile">
+
+                <h2>Perfil de Usuario </h2>
+                <form id="profile-form" enctype="multipart/form-data">
+                    <!-- Cuadro de diálogo oculto -->
+                    <div id="modal" class="modal">
+                        <div class="modal-content-p">
+                            <span class="close" id="closeButton">⊗</span>
+                            <h3>Selecciona un avatar</h3>
+                            <div class="image-container">
+                                <div class="image-row">
+                                    <img src="../static/assets/avatars/alien.png" alt="Alien"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/alien.png')" />
+                                    <img src="../static/assets/avatars/man.png" alt="Man"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/man.png')" />
+                                    <img src="../static/assets/avatars/monkey.png" alt="Monkey"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/monkey.png')" />
+                                    <img src="../static/assets/avatars/soldier.png" alt="Soldier"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/soldier.png')" />
+                                </div>
+                                <div class="image-row">
+                                    <img src="../static/assets/avatars/pilot.png" alt="Pilot"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/pilot.png')" />
+                                    <img src="../static/assets/avatars/robot.png" alt="Robot"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/robot.png')" />
+                                    <img src="../static/assets/avatars/yoda.jpeg" alt="Yoda"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/yoda.jpeg')" />
+                                    <img src="../static/assets/avatars/robot2.png" alt="Yoda"
+                                        onclick="seleccionarAvatar('../static/assets/avatars/robot2.png')" />
+                                    <!-- Agrega las imágenes restantes aquí -->
+                                </div>
+                            </div>
+                            <button type="button" id="guardarButton" class="boton-red">Seleccionar Avatar</button>
+                        </div>
+                    </div>
+
+                    <div class="imagen">
+
+                        <img src="https://th.bing.com/th/id/OIP._Hz-hVaYc9a520yIO78ddwHaHT?pid=ImgDet&rs=1"
+                            alt="Imagen de Perfil" id="imagen_perfil" class="imagen-redonda" name="ruta_imagen_perfil">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">User Name:</label>
+                        <input type="text" name="username" id="usernameInput" value="johnd">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombreInput" value="John">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" name="apellido" id="apellidoInput" value="Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="emailInput" value="johndoe@example.com">
+                    </div>
+
+
+                    <!-- Campos adicionales (contraseña, fecha de nacimiento, etc.) -->
+                    <button type="button" id="Cambiar-Clave">Cambiar Contraseña</button>
+                    <button type="button" id="Guardar-Cambios">Guardar Cambios</button>
+
+
+                    <button id="Eliminar-usuario">Eliminar Cuenta</button>
+                    <button id="logout">Logout</button>
+
+
+
+                </form>
+
+                <div id="modal-clave" class="modal-clave" style="display: none;">
+                    <div class="modal-content-clave">
+                        <span class="close-clave" id="closeClave">&times;</span>
+                        <h3>Cambiar Contraseña</h3>
+                        <form id="cambiar-clave-form">
+                            <label for="nuevaclave">Nueva Contraseña:</label>
+                            <input type="password" id="nuevaclave" name="nuevaclave" required>
+
+                            <label for="confirmacion">Confirmar Contraseña:</label>
+                            <input type="password" id="confirmacion" name="confirmacion" required>
+
+                            <button type="button" id="guardarClave">Guardar Contraseña</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-content-p">
+        <span class="close" id="closeProfile" onclick="">⊗</span>
+
+
+        <form id="addCanchaForm">
+            <div class="addCanchaForm">
+                <h1>Agregar cancha</h1>
+
+                <div>
+                    <label>Nombre:</label>
+                    <input type="text" id="nombreCancha" placeholder="nombre Cancha" class="input-container" required>
+                </div>
+                <div class="form-group">
+                    <label>Precio:</label>
+                    <input type="text" id="precioCancha" placeholder="precio Cancha" class="input-container" required>
+                </div>
+
+                <button type="button" onclick="agregarCancha()"> Agregar Cancha </button>
+            </div>
+
+        </form>
+
+        <form id="addCanchaForm">
+            <div class="addCanchaForm">
+                <h1>buscador cancha</h1>
+
+                <div>
+                    <label>Nombre:</label>
+                    <input type="text" id="nombreCancha" placeholder="nombre Cancha" class="input-container" required>
+                </div>
+                <div class="form-group">
+                    <label>Precio:</label>
+                    <input type="text" id="precioCancha" placeholder="precio Cancha" class="input-container" required>
+                </div>
+
+                <button type="button" onclick="agregarCancha()"> Buscar </button>
+            </div>
+
+        </form>
+
+        <div id="canchasList">
+            <!-- Aquí se mostrarán las tarjetas de las canchas existentes. -->
+        </div>
+
+        <!-- Ventana modal -->
+        <div id="modal" class="modal">
+
+            <div class="container-profile">
+                <span class="close" onclick="cerrarModal()">⊗</span>
+
+                <div class="input-container">
+                    <h3>Editar Cancha</h3>
+                </div>
+
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" id="nuevoNombre" placeholder="Nuevo nombre">
+                </div>
+
+                <div class="form-group">
+                    <label>Precio: </label>
+                    <input type="text" id="nuevoPrecio" placeholder="Nuevo precio">
+                </div>
+
+                <button onclick="guardarEdicion()">Guardar</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <script src="../scripts/admin.js"></script>
+    <!-- <script src="../scripts/profile.js"></script> -->
+</body>
+
+</html>

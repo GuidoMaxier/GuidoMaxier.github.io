@@ -1,0 +1,26 @@
+{
+    "torneo": "Mini Torneo de Fútbol",
+    "equipos": [
+      {
+        "nombre": "Equipo A",
+        "partidosJugados": 5,
+        "victorias": 3,
+        "empates": 1,
+        "derrotas": 1,
+        "golesFavor": 10,
+        "golesContra": 6
+      },
+      {
+        "nombre": "Equipo B",
+        "partidosJugados": 5,
+        "victorias": 2,
+        "empates": 2,
+        "derrotas": 1,
+        "golesFavor": 8,
+        "golesContra": 5
+      }
+      
+    ]
+  }
+  
+  

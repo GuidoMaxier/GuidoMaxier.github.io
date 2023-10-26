@@ -29,7 +29,8 @@ for (var i = 0; i < arrows.length; i++) {
         const iframe = document.getElementById("content-frame");
 
         if (dataSrc && iframe) {
-          iframe.src = dataSrc; // Carga la URL de destino en el iframe.
+            iframe.src = dataSrc; // Carga la URL de destino en el iframe.
+          
         }
       });
     });
@@ -37,6 +38,17 @@ for (var i = 0; i < arrows.length; i++) {
 
 
 
-// se logea
+// Escucha los mensajes del iframe
+window.addEventListener("message", function (event) {
+  // Verifica si el mensaje proviene del iframe y si contiene la información del usuario
+  if (event.source === iframeElement.contentWindow && event.data === "usuarioLogeado") {
+      // Realiza la actualización de la página contenedora aquí
+      location.reload(); // O cualquier otra acción que necesites
+  }
+});
+
+// Obtén la referencia al elemento iframe
+const iframeElement = document.getElementById("content-frame");
+
 
 

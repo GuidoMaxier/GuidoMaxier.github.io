@@ -262,7 +262,7 @@ body {
   height: 100vh;
   width: calc(100% - 200px);
   left: 200px;
-  background-color: #00cc00;
+  background-color: #292e29cb;
   transition: all 0.5s ease;
 }
 
@@ -295,6 +295,10 @@ body {
 }
 
 
+.logout-menu,
+.profile-details{
+  display: none;
+}
 
 
 @media (max-width: 400px) {
@@ -326,7 +330,3 @@ body {
 }
 
 
-.logout-menu,
-.profile-details{
-  display: none;
-}

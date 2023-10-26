@@ -38,14 +38,15 @@ if (!localStorage.getItem('usuarios')) {
         // Comparamos la contraseña ingresada con la contraseña del usuario encontrado
         if (usuarioEncontrado.clave === password) {
             // Inicio de sesión exitoso
-            alert('¡Inicio de sesión exitoso!\nBienvenido, ' + usuarioEncontrado.nombre);
+            // alert('¡Inicio de sesión exitoso!\nBienvenido, ' + usuarioEncontrado.nombre);
 
             // Guarda al usuario en la sesión actual
             sessionStorage.setItem("usuarioLogeado", JSON.stringify(usuarioEncontrado));
 
             // Redirige al usuario a la página deseada después del inicio de sesión.
-            if (usuarioEncontrado.rol === 'administrador') {
-                window.location.href = '/FRONTEND/sidebar.html';
+            if (usuarioEncontrado.rol === 'administrador'){
+                // window.location.href = '/FRONTEND/index.html';
+                parent.postMessage("usuarioLogeado", "*");
             } else if (usuarioEncontrado.rol === 'cliente') {
                 window.location.href = '/FRONTEND/sidebar.html';
             }

@@ -63,8 +63,9 @@ footer {
     background-color: #23272a;
     padding: 1px;
     text-align: center;
-    position:sticky;
+    position: fixed;
     bottom: 0;
+    width: 100%;
 }
 
 footer p {

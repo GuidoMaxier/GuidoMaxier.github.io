@@ -3,35 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login y Registro con Animaciones</title>
+    <title>Login y Registro</title>
     <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/login.css">
-    <!-- <link rel="stylesheet" href="../styles/navbar.css"> -->
+    <link rel="stylesheet" href="../styles/styles.css"> 
     
 </head>
 <body>
     <header>
-        <h1>Complejo deportivo-La Redonda</h1>
-
-    </header>
-    
-    <nav  class="navbar">
-        <div class="menu-toggle" id="menu-toggle">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-
-        <ul class="menu" id="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="./reserva.html">Reservas</a></li>
-            <li><a href="./torneos.html">Torneos</a></li>
-            <li><a href="./login.html">Iniciar sesion</a></li>
-
-        </ul>
-    </nav>
+        <h1>Planeta deportes</h1>
+        <img src="https://www.tenvinilo.com/vinilos-decorativos/img/preview/vinilo-infantil-pelota-futbol-color-1399.png" id="pelota">
+        <h1>Complejo deportivo</h1>
+        <img src="https://w7.pngwing.com/pngs/64/156/png-transparent-tennis-balls-tennis-game-grass-cartoon.png" id="pelota">
+    </header> 
 
     <div class="container">
         <div class="form-container login-container">
@@ -39,17 +23,18 @@
             <form id="login-form" autocomplete="off">
                 <div class="error" id="error-user"></div>
                 <div class="input-container">
-                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    <input type="text" id="username" name="username" placeholder="Usuario" autocomplete="off" required>
                 </div>
                 <div class="error" id="error-pass"></div>
                 <div class="input-container">
-                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" autocomplete="off" required>
                 </div>
                 <button type="submit" class= "team-button">Ingresar</button>
             </form>
             <p class="toggle-form-text">¿No tienes una cuenta? <button class="toggle-form-button-register">Regístrate</button></p>
         </div>
 
+        <!-- Zona de Registro -->
         
         <div class="form-container register-container">
             <div class="exito" id="exito-usuario"></div>
@@ -57,27 +42,27 @@
             <form id="register-form" autocomplete="off">
                 <div class="error" id="error-username"></div>
                 <div class="input-container">
-                    <input type="text" id="register-username" name="register-username" placeholder="Usuario" required>
+                    <input type="text" id="register-username" name="register-username" placeholder="Usuario" autocomplete="off" required>
                 </div>
 
                 <div class="error" id="error-firstname"></div>
                 <div class="input-container">
-                    <input type="text" name="firstname" id="register-firstname" placeholder="Nombre" required>
+                    <input type="text" name="firstname" id="register-firstname" placeholder="Nombre" autocomplete="off" required>
                 </div>
 
                 <div class="error" id="error-lastname"></div>
                 <div class="input-container">
-                    <input type="text" name="lastname" id="register-lastname" placeholder="Apellido" required>
+                    <input type="text" name="lastname" id="register-lastname" placeholder="Apellido"autocomplete="off"  required>
                 </div>
                 
                 <div class="error" id="error-email"></div>
                 <div class="input-container">
-                    <input type="email" name="email" id="register-email" placeholder="Email" required>
+                    <input type="email" name="email" id="register-email" placeholder="Email"  autocomplete="off" required>
                 </div>
 
                 <div class="error" id="error-password"></div>
                 <div class="input-container">
-                    <input type="password" name="password" id="register-password" placeholder="Contraseña" required>
+                    <input type="password" name="password" id="register-password" placeholder="Contraseña" autocomplete="off"  required>
                 </div>
                 
                 <div class="error" id="error-birthdate"></div>
@@ -93,11 +78,15 @@
     </div>
 
     <footer>
-        <p>Derechos de autor &copy; 2023 Mi Página Web</p>
-    </footer>
+        <div class="footer-content">
+          <p>&copy; 2023 Planeta Deportes</p>
+        </div>
+    </footer> 
+
     <script src="../scripts/login.js"></script>
     <script src="../scripts/validation-register.js"></script>
-    <script src="../scripts/navbar.js"></script>
+    <!-- <script src="../scripts/navbar.js"></script> -->
+
     
 </body>
 </html>

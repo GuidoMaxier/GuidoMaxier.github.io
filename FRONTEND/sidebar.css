@@ -13,6 +13,11 @@
 body {
   overflow: hidden;
 }
+
+.container {
+  display: flex;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -22,10 +27,12 @@ body {
   background: linear-gradient(to left,#181818, #1e501e, #1e501e, #181818);
   z-index: 100;
   transition: all 0.5s ease;
+
 }
 
 .sidebar.close {
   width: 70px;
+
 }
 
 .sidebar .logo {
@@ -159,7 +166,7 @@ body {
   top: 0;
   opacity: 1;
   pointer-events: auto;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .sidebar .nav-list li .sub-menu a {
@@ -197,10 +204,10 @@ body {
 }
 
 .profile-details {
-  position: fixed;
+  position:fixed;
   bottom: 0;
   width: 200px;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
   background-color: #000000;
@@ -255,7 +262,7 @@ body {
   height: 100vh;
   width: calc(100% - 200px);
   left: 200px;
-  background-color: #a9b8a9;
+  background-color: #00cc00;
   transition: all 0.5s ease;
 }
 
@@ -287,6 +294,9 @@ body {
   font-weight: 600;
 }
 
+
+
+
 @media (max-width: 400px) {
   .sidebar.close .nav-list li .sub-menu {
     display: none;
@@ -303,8 +313,8 @@ body {
   }
 
   .home-section {
-    left: 50px;
-    width: calc(100% - 50px);
+    left: 60px;
+    width: calc(100% - 60px);
     z-index: 100;
   }
 
@@ -313,4 +323,10 @@ body {
     left: 0;
     
   }
+}
+
+
+.logout-menu,
+.profile-details{
+  display: none;
 }

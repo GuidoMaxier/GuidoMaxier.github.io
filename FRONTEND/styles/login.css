@@ -1,26 +1,37 @@
 
+/* Estilo para campos autocompletados */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  /* Modifica el fondo y el texto según tus preferencias */
+  background-color: #36393fea; 
+  color: #9e9c9c; 
+  border: 1px solid #ccc; 
+}
+
+
 
 
 /* Estilo general */
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #36393f; 
     color: #fff;
     margin: 0;
     padding: 0;
-}
+} */
 
 /* Agregar imagen de fondo */
-body {
+/* body {
     background-image: url('../img/pasto_sintetico.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-}
+} */
 
 /* Estilo del encabezado */
-header {
+/* header {
     background-color: #83b8839d;
     padding: 10px;
     text-align: center;
@@ -30,7 +41,7 @@ header h1 {
     font-size: 24px;
     margin: 0;
     color: #fff;
-}
+} */
 
 /* Estilo de la barra de navegación
 nav {
@@ -74,7 +85,7 @@ nav ul li a {
     text-align: center;
     transition: transform 0.3s;
     width: 300px;
-    margin: 10px;
+    margin: 100px;
     color: #e7e8f0;
 }
 
@@ -114,7 +125,7 @@ input {
     border: 1px solid #7289da;
     border-radius: 3px;
     background-color: #36393fea; 
-    color: #080808;
+    color: #9e9c9c;
     /* color: #ffffff; */
     font-weight: bold;
 }
@@ -169,7 +180,7 @@ input {
 
 
 .team-button {
-    background-color: #4ac21370; /* Color del equipo */
+    background-color: #4ac21370; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -178,12 +189,12 @@ input {
     text-transform: uppercase;
 }
 .team-button:hover {
-    background-color: #4bc213; /* Cambia a un color diferente al pasar el cursor */
+    background-color: #4bc213; 
     color: white;
     transition: background-color 0.3s ease;
 }
 /* Estilo del pie de página */
-footer {
+/* footer {
     background-color: #23272a;
     padding: 10px;
     text-align: center;
@@ -192,4 +203,4 @@ footer {
 footer p {
     font-size: 14px;
     color: #ccc;
-}
+} */

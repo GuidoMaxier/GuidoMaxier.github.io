@@ -45,9 +45,9 @@ if (!localStorage.getItem('usuarios')) {
 
             // Redirige al usuario a la página deseada después del inicio de sesión.
             if (usuarioEncontrado.rol === 'administrador') {
-                window.location.href = 'pagina-admin.html';
+                window.location.href = '/FRONTEND/sidebar.html';
             } else if (usuarioEncontrado.rol === 'cliente') {
-                window.location.href = 'pagina-cliente.html';
+                window.location.href = '/FRONTEND/sidebar.html';
             }
         } else {
             // Contraseña incorrecta

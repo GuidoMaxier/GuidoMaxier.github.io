@@ -1,79 +1,3 @@
-/* Estilos generales */
-
-body::before {
-    content: "";
-    background-image: url(../img/pasto_sintetico.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    opacity: 0.3;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #36393f;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    
-}
-
-/* Estilo del encabezado */
-header {
-    background-color: #83b8839d;
-    padding: 10px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 24px;
-    margin: 0;
-    color: #fff;
-}
-
-/* Estilo de la barra de navegación */
-nav {
-    background-color: #23272a;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-/* Estilo del pie de página */
-footer {
-    background-color: #23272a;
-    padding: 10px;
-    text-align: center;
-    position:sticky;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    font-size: 14px;
-    color: #ccc;
-}
-
 
 /* Estilos para las tarjetas de las canchas */
 .canchas-container{
@@ -81,6 +5,7 @@ footer p {
     flex-wrap: wrap;
     justify-content:center;
     border-radius: 20%;
+    color: black
 
 }
 .cancha-card {
@@ -89,6 +14,8 @@ footer p {
     padding: 10px;
     background-color: #f9f9f9;
     display: inline-block;
+    border-radius: 10px; /* octubre */
+    box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5); /*octubre*/
 }
 
 .cancha-card h2 {

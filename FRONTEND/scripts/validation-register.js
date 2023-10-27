@@ -116,7 +116,7 @@ function addUser(){
     const nuevoUsuario = {
     username: username,
     clave: password,
-    avatar: '../img/avatar/guest-300x300.webp',
+    avatar: '../img/avatar/OIP.jpeg',
     nombre: firtsname,
     apellido: lastname,
     email: email,

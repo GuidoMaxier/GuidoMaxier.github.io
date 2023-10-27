@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO CODO a CODO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <!--Enlazar CSS de bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   
+   <!-- cris modifico el css de Torneos por ello te escribi esta linea para suplir lo faltante -->
+    <link rel="stylesheet" href="../styles/styles.css"> 
+
+
     <link rel="stylesheet" href="../styles/torneos.css">
     <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
 </head>
 <body>
- <header>
+    <header>
+        <!--consultar con grupo-->
         <h1>Planeta deportes</h1>
         <img src="https://www.tenvinilo.com/vinilos-decorativos/img/preview/vinilo-infantil-pelota-futbol-color-1399.png" id="pelota">
         <h1>Complejo deportivo</h1>
         <img src="https://w7.pngwing.com/pngs/64/156/png-transparent-tennis-balls-tennis-game-grass-cartoon.png" id="pelota">
-</header> 
+    </header>
+    
     <!-- <nav>
         <ul>
             <li><a href="#">Inicio</a></li>
@@ -26,14 +35,14 @@
             <li><a href="./login.html">Iniciar sesion</a></li>
             <li><a href="#">Registrarse</a></li>
         </ul>
-    </nav>
-     -->
+    </nav> -->
+    
     <main>
         <section class="carousel">
             <!--Carousel con Boostrap-->
             <div id="carouselComplejo" class="carousel slide">
                 
-                <div class="carousel-inner">
+                <div class="carousel-container">
                    
                     <div class="carousel-item active">
                         <img src="../img/predio.jpg" class="d-block w-100" alt="imagen del predio">
@@ -93,14 +102,25 @@
                 <li>Ademas contamos con restobar, estacionamiento privado y mucho verde para disfrutar del aire libre.</li>
             </ul>
         </section>
+
+        <section id="formulario">
+            <iframe src="/templates/formulario.html" width="600" height="400"></iframe>
+        </section>
+
     </main>
     
     <footer>
         <div class="footer-content">
-          <p>&copy; 2023 Planeta Deportes</p>
+            <p>&copy; 2023 Planeta Deportes
+                <span class="social-icons">
+                    <!-- <a href="https://www.facebook.com/Planeta_Deportes" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/Planeta_Deportes" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/Planeta_Deportes" target="_blank"><i class="fab fa-instagram"></i></a> -->
+                    <a href="https://github.com/GuidoMaxier/FRONTEND" target="_blank"><i class="fab fa-github"></i></a>
+                </span>
+            </p>
         </div>
-    </footer> 
- 
+    </footer>
 
      <!--Enlazar JS de bootstrap-->
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

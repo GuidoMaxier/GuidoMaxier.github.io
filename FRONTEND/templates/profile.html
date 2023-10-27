@@ -4,62 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/admin.css">
+    <link rel="stylesheet" href="../styles/profile.css">
     <!-- <link rel="stylesheet" href="../styles/profile.css"> -->
+    <link rel="stylesheet" href="../styles/styles.css"> 
     <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    
 </head>
 
 <body>
-    <button type="button" onclick="profile()"> Profile </button>
+
+    <header>
+        <h1>Planeta deportes</h1>
+        <img src="https://www.tenvinilo.com/vinilos-decorativos/img/preview/vinilo-infantil-pelota-futbol-color-1399.png" id="pelota">
+        <h1>Complejo deportivo</h1>
+        <img src="https://w7.pngwing.com/pngs/64/156/png-transparent-tennis-balls-tennis-game-grass-cartoon.png" id="pelota">
+    </header> 
+
+    <!-- <button type="button" onclick="profile()"> Profile </button>
     <button id="logout">Logout</button>
     <button type="button"> Aregar Canchas</button>
-    <button type="button"> Profile dsad</button>
+    <button type="button"> Profile dsad</button> -->
     <!-- Ventana modal para Profile -->
+
+    
+
     <div id="profileModal" class="modal-profile">
         <div class="modal-content-p">
-            <span class="close" id="closeProfile" onclick="cerrarModalProfile()">⊗</span>
+            <!-- <span class="close" id="closeProfile" onclick="cerrarModalProfile()">⊗</span> -->
 
             <div class="container-profile">
 
                 <h2>Perfil de Usuario </h2>
                 <form id="profile-form" enctype="multipart/form-data">
                     <!-- Cuadro de diálogo oculto -->
-                    <div id="modal" class="modal">
-                        <div class="modal-content-p">
-                            <span class="close" id="closeButton">⊗</span>
-                            <h3>Selecciona un avatar</h3>
-                            <div class="image-container">
-                                <div class="image-row">
-                                    <img src="../static/assets/avatars/alien.png" alt="Alien"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/alien.png')" />
-                                    <img src="../static/assets/avatars/man.png" alt="Man"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/man.png')" />
-                                    <img src="../static/assets/avatars/monkey.png" alt="Monkey"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/monkey.png')" />
-                                    <img src="../static/assets/avatars/soldier.png" alt="Soldier"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/soldier.png')" />
-                                </div>
-                                <div class="image-row">
-                                    <img src="../static/assets/avatars/pilot.png" alt="Pilot"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/pilot.png')" />
-                                    <img src="../static/assets/avatars/robot.png" alt="Robot"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/robot.png')" />
-                                    <img src="../static/assets/avatars/yoda.jpeg" alt="Yoda"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/yoda.jpeg')" />
-                                    <img src="../static/assets/avatars/robot2.png" alt="Yoda"
-                                        onclick="seleccionarAvatar('../static/assets/avatars/robot2.png')" />
-                                    <!-- Agrega las imágenes restantes aquí -->
-                                </div>
-                            </div>
-                            <button type="button" id="guardarButton" class="boton-red">Seleccionar Avatar</button>
-                        </div>
-                    </div>
+                   
 
                     <div class="imagen">
 
-                        <img src="https://th.bing.com/th/id/OIP._Hz-hVaYc9a520yIO78ddwHaHT?pid=ImgDet&rs=1"
+                        <img src="/img/avatar/OIP.jpeg"
                             alt="Imagen de Perfil" id="imagen_perfil" class="imagen-redonda" name="ruta_imagen_perfil">
-                    </div>
+                    
+                        </div>
+                    <button type="button"id="openModalAvatar">Cambiar avatar</button>
 
                     <div class="form-group">
                         <label for="username">User Name:</label>
@@ -81,13 +70,13 @@
                     </div>
 
 
-                    <!-- Campos adicionales (contraseña, fecha de nacimiento, etc.) -->
-                    <button type="button" id="Cambiar-Clave">Cambiar Contraseña</button>
+                    
+                    <!-- <button type="button" id="Cambiar-Clave">Cambiar Contraseña</button> -->
                     <button type="button" id="Guardar-Cambios">Guardar Cambios</button>
 
 
                     <button id="Eliminar-usuario">Eliminar Cuenta</button>
-                    <button id="logout">Logout</button>
+                    <!-- <button id="logout">Logout</button> -->
 
 
 
@@ -113,11 +102,11 @@
         </div>
     </div>
 
-    <div class="modal-content-p">
-        <span class="close" id="closeProfile" onclick="">⊗</span>
+    <!-- <div class="modal-content-p">
+        <span class="close" id="closeProfile" onclick="">⊗</span> -->
 
 
-        <form id="addCanchaForm">
+        <!-- <form id="addCanchaForm">
             <div class="addCanchaForm">
                 <h1>Agregar cancha</h1>
 
@@ -133,9 +122,9 @@
                 <button type="button" onclick="agregarCancha()"> Agregar Cancha </button>
             </div>
 
-        </form>
+        </form> -->
 
-        <form id="addCanchaForm">
+        <!-- <form id="addCanchaForm">
             <div class="addCanchaForm">
                 <h1>buscador cancha</h1>
 
@@ -151,14 +140,14 @@
                 <button type="button" onclick="agregarCancha()"> Buscar </button>
             </div>
 
-        </form>
+        </form> -->
 
-        <div id="canchasList">
-            <!-- Aquí se mostrarán las tarjetas de las canchas existentes. -->
-        </div>
+        <!-- <div id="canchasList">
+            
+        </div> -->
 
         <!-- Ventana modal -->
-        <div id="modal" class="modal">
+        <!-- <div id="modal" class="modal">
 
             <div class="container-profile">
                 <span class="close" onclick="cerrarModal()">⊗</span>
@@ -179,17 +168,64 @@
 
                 <button onclick="guardarEdicion()">Guardar</button>
             </div>
+        </div> -->
+
+
+
+
+
+
+    <!-- </div> -->
+
+    <div id="modal-avatar" class="modal-avatar">
+        
+        <div class="modal-content-avatar">
+            <span class="close-avatar" id="closeButton">⊗</span>
+            
+            <h3>Selecciona un avatar</h3>
+            
+            <div class="image-container">
+                <div class="image-row">
+                    <img src="/img/avatar/alien.png" alt="Alien"
+                        onclick="seleccionarAvatar('/img/avatar/alien.png')" />
+                    <img src="/img/avatar/man.png" alt="Man"
+                        onclick="seleccionarAvatar('/img/avatar/man.png')" />
+                    <img src="/img/avatar/monkey.png" alt="Monkey"
+                        onclick="seleccionarAvatar('/img/avatar/monkey.png')" />
+                    <img src="/img/avatar/soldier.png" alt="Soldier"
+                        onclick="seleccionarAvatar('/img/avatar/soldier.png')" />
+                </div>
+                <div class="image-row">
+                    <img src="/img/avatar/pilot.png" alt="Pilot"
+                        onclick="seleccionarAvatar('/img/avatar/pilot.png')" />
+                    <img src="/img/avatar/robot.png" alt="Robot"
+                        onclick="seleccionarAvatar('/img/avatar/robot.png')" />
+                    <img src="/img/avatar/yoda.jpeg" alt="Yoda"
+                        onclick="seleccionarAvatar('/img/avatar/yoda.jpeg')" />
+                    <img src="/img/avatar/robot2.png" alt="Yoda"
+                        onclick="seleccionarAvatar('/img/avatar/robot2.png')" />
+                </div>
+            </div>
+            <button type="button" id="guardarButton" class="boton-red">Seleccionar Avatar</button>
+            
         </div>
-
-
-
-
-
-
     </div>
 
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Planeta Deportes
+                <span class="social-icons">
+                    <!-- <a href="https://www.facebook.com/Planeta_Deportes" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/Planeta_Deportes" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/Planeta_Deportes" target="_blank"><i class="fab fa-instagram"></i></a> -->
+                    <a href="https://github.com/GuidoMaxier/FRONTEND" target="_blank"><i class="fab fa-github"></i></a>
+                </span>
+            </p>
+        </div>
+    </footer>
 
-    <script src="../scripts/admin.js"></script>
+
+    <script src="../scripts/profile.js"></script>
     <!-- <script src="../scripts/profile.js"></script> -->
 </body>
 

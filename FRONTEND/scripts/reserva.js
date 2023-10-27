@@ -129,13 +129,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const validationForm = (event) =>{
 
        let validation= true;
-       if (fecha.value === ""){
-            const p  = document.createElement("p");
-            p.innerHTML= "<b>Debes completar el campo fecha</b>"
-            formulario.appendChild(p)
-            event.preventDefault();
-            validation=false;
-       }
+
+       if (fecha.value === "") {
+        const p = document.createElement("p");
+        p.innerHTML = "<b>Debes completar el campo fecha</b>";
+        p.style.color = "red"; // Cambiar el color del texto a rojo
+        formulario.appendChild(p);
+        event.preventDefault();
+        validation = false;
+    }
+    
        if (validation) {
         //si esta ok la validacion almacenamos los datos en el servidor
 

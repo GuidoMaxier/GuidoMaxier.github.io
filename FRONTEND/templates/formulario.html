@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/formulario.css">
+    <title>Formulario de Contacto</title>
+</head>
+<body>
+    <form action="#" class="formulario" id="contacto-form">
+        <h1 class="formulario__titulo">Contactarnos</h1>
+
+        <div class="campo">
+            <div class="error" id="error-nombres"></div>
+            <input type="text" id="nombres" class="formulario__input">
+            <label for="nombres" class="formulario__label">Nombres</label>
+            
+        </div>
+
+        <div class="campo">
+            <div class="error" id="error-correo"></div>
+            <input type="email" id="correo" class="formulario__input">
+            <label for="correo" class="formulario__label">Correo</label>
+            
+        </div>
+
+        <div class="campo">
+            <div class="error" id="error-telefono"></div>
+            <input type="tel" id="telefono" class="formulario__input">
+            <label for="telefono" class="formulario__label">Teléfono</label>
+            
+        </div>
+
+        <div class="campo">
+            <textarea id="mensaje" class="formulario__input" rows="4" required></textarea>
+            <label for="mensaje" class="formulario__label">Mensaje</label>
+        </div>
+
+        <div class="mensaje-enviado" id="mensaje-enviado"></div>
+
+        <input type="submit" value="Enviar" class="formulario__submit">
+    </form>
+    <script src="/scripts/formulario.js"></script>
+</body>
+</html>

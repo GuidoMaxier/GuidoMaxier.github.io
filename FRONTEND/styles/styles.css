@@ -58,9 +58,11 @@ header h1 {
 }
 
 
+
 /* Estilo del pie de página */
 footer {
     background-color: #23272a;
+    color: #fff;
     padding: 1px;
     text-align: center;
     position: fixed;
@@ -68,7 +70,85 @@ footer {
     width: 100%;
 }
 
+
+footer a:hover {
+    text-decoration:dashed;
+    color:#e7b920;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
 footer p {
     font-size: 14px;
     color: #ccc;
 }
+
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+
+}
+
+/* Estilo de texto para carrusel */
+
+.carousel{
+    background-color: transparent;
+    position: relative;
+    max-width: 100%;
+}
+/* 
+.carousel-item.active,.carousel-item {
+    position: relative;
+}
+
+.carousel-item.active .texto_carousel{
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+    background-color: #ffffff5d;
+}*/
+
+.texto_carousel{
+    bottom: 3%;
+    left: 3%;
+    background-color: #ffffff5d;
+    text-align: center;
+}
+
+.carousel-item {
+    min-width: 100%;
+    flex: 0 0 auto;
+
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+}
+
+#titulo_carousel{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.carousel-container {
+    display: flex;
+    
+}
+
+/* Estilo de header con animacion */
+h1{
+    display: inline-block;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+
+

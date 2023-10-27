@@ -3,7 +3,6 @@
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  /* Modifica el fondo y el texto según tus preferencias */
   background-color: #36393fea; 
   color: #9e9c9c; 
   border: 1px solid #ccc; 
@@ -43,27 +42,6 @@ header h1 {
     color: #fff;
 } */
 
-/* Estilo de la barra de navegación
-nav {
-    background-color: #23272af8;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-} */
 
 .container {
     display: flex;
@@ -98,7 +76,7 @@ nav ul li a {
 }
 
 
-/* Estilos para blockalternar entre el formulario de inicio de sesión y registro */
+/* Alternar entre el formulario de inicio de sesión y registro */
 .toggle-form-button-register, .toggle-form-button-login {
     background-color: transparent;
     border: none;
@@ -112,7 +90,7 @@ nav ul li a {
     color: #0056b3;
 }
 
-/* Estilos para los elementos del formulario */
+
 .input-container {
     margin-bottom: 15px;
     text-align: left;
@@ -156,10 +134,10 @@ input {
 .input-container label {
     position: absolute;
     top: 50%;
-    left: 10px; /* Ajusta la posición horizontal según tus preferencias */
+    left: 10px; 
     transform: translateY(-50%);
-    color: #888; /* Cambia el color del texto para que parezca un marcador de posición */
-    pointer-events: none; /* Evita que la etiqueta interfiera con la interacción del usuario */
+    color: #888; 
+    pointer-events: none; 
     transition: transform 0.2s ease, opacity 0.2s ease;
 
 }
@@ -170,6 +148,7 @@ input {
     opacity: 0.8;
 }
 
+
 #register-birthdate{
     color: rgba(0, 0, 0, 0);
 }
@@ -177,6 +156,11 @@ input {
 .input-container{
     font-size: small;
 }
+
+/* .input-container i {
+    display: block; 
+    margin-right: 1px; 
+} */
 
 
 .team-button {
@@ -193,14 +177,3 @@ input {
     color: white;
     transition: background-color 0.3s ease;
 }
-/* Estilo del pie de página */
-/* footer {
-    background-color: #23272a;
-    padding: 10px;
-    text-align: center;
-}
-
-footer p {
-    font-size: 14px;
-    color: #ccc;
-} */

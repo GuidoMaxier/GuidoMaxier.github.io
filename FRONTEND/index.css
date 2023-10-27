@@ -40,6 +40,7 @@ body {
   display: flex;
   width: 100%;
   align-items: center;
+  cursor: pointer;
 }
 
 .sidebar .logo i {
@@ -128,7 +129,7 @@ body {
 .sidebar .nav-list li a .link-name {
   color: #fff;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 300;
   transition: all 0.4s ease;
 }
 
@@ -294,11 +295,15 @@ body {
   font-weight: 600;
 }
 
-
+.profile-menu,
 .logout-menu,
 .profile-details{
   display: none;
 }
+
+/* .login-menu{
+  display: flex;
+} */
 
 
 @media (max-width: 400px) {
@@ -312,7 +317,7 @@ body {
   }
 
   .sidebar.close {
-    width: 0;
+    width: 30px;
     
   }
 

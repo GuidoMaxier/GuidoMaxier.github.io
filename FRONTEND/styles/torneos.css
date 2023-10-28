@@ -107,13 +107,40 @@ p ,ul,li {
 }
 
 /* Estilo del pie de página */
-footer {
+/* footer {
     background-color: #23272a;
     padding: 10px;
     text-align: center;
     position:sticky;
     bottom: 0;
     width: 100%;
+} */
+
+/* footer p {
+    font-size: 14px;
+    color: #ccc;
+} */
+
+/* Estilo del pie de página */
+footer {
+    background-color: #23272a;
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+footer a:hover {
+    text-decoration:dashed;
+    color:#e7b920;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
 }
 
 footer p {

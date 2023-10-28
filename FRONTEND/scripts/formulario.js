@@ -1,5 +1,5 @@
 var inputs = document.getElementsByClassName('formulario__input');
-for (var i = 0; i < inputs.length; i++) {
+for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('keyup', function () {
         if(this.value.length>=1) {
             this.nextElementSibling.classList.add('fijar');
@@ -8,6 +8,18 @@ for (var i = 0; i < inputs.length; i++) {
         }
     });
 }
+
+var texts = document.getElementsByClassName('.formulario__text');
+for (let i = 0; i < texts.length; i++) {
+    texts[i].addEventListener('keyup', function () {
+        if(this.value.length>=1) {
+            this.nextElementSibling.classList.add('fijar');
+        } else {
+            this.nextElementSibling.classList.remove('fijar');
+        }
+    });
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contacto-form");
@@ -31,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
         // Validación del nombre (mínimo 4 caracteres)
         if (nombres.value.trim() === "" || nombres.value.length < 4) {
-            mostrarError(nombres, "El campo Nombres debe tener al menos 4 caracteres");
+            mostrarError(nombres, "Nombres debe tener al menos 4 caracteres");
+            nombres.value = ""
             valido = false;
         } else {
             mostrarError(nombres, null);
@@ -40,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Validación del correo electrónico
         if (correo.value.trim() === "" || !esCorreoValido(correo.value)) {
             mostrarError(correo, "Ingresa un correo válido");
+            correo.value = ""
             valido = false;
         } else {
             mostrarError(correo, null);
@@ -47,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
         // Validación del número de teléfono para Argentina
         if (telefono.value.trim() !== "" && !esTelefonoValidoArgentina(telefono.value)) {
-            mostrarError(telefono, "Ingresa un número de teléfono válido para Argentina");
+            mostrarError(telefono, "Ingresa un nro de teléfono válido en Argentina");
+            telefono.value = ""
             valido = false;
         } else {
             mostrarError(telefono, null);

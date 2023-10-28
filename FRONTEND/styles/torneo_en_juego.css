@@ -99,11 +99,24 @@ h2 {
 /* Estilo del pie de página */
 footer {
     background-color: #23272a;
-    padding: 10px;
+    color: #fff;
+    padding: 1px;
     text-align: center;
-    position:sticky;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    min-height: 50px;
+}
+
+
+footer a:hover {
+    text-decoration:dashed;
+    color:#e7b920;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
 }
 
 footer p {
@@ -179,11 +192,16 @@ tbody td{
     }
 }
 
-@media screen and (min-width: 768px){
+ @media screen and (min-width: 768px){
     p{
         display: none;
-    }
+    } 
     
+    footer p {
+        font-size: 14px;
+        color: #ccc;
+        display: block;
+    }
 
-}
+ } 
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Bree+Serif&family=Playpen+Sans:wght@300&display=swap');
+
 body::before {
     content: "";
     background-image: url(../img/pasto_sintetico.jpg);
@@ -68,6 +70,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+
 }
 
 
@@ -150,5 +153,18 @@ h1{
     font-family: 'ABeeZee', sans-serif;
 }
 
+.container-formulario{
+    background-color: #030303;
+}
 
+iframe {
+    border: none;
+    outline: none; /* Para eliminar el enfoque predeterminado en algunos navegadores */
+}
 
+.centrar-iframe {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}

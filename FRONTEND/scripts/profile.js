@@ -82,7 +82,7 @@ const avatarSrc = usuarioLogeado.avatar;
 
 // Actualiza la imagen de perfil 
 const imagenPerfil = document.getElementById('imagen_perfil');
-imagenPerfil.src = avatarSrc;
+imagenPerfil.src = "." + avatarSrc;
 
 
 

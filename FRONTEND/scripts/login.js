@@ -5,7 +5,7 @@ if (!localStorage.getItem('usuarios')) {
       {
         username: 'anita',
         clave: 'admin123',
-        avatar: '../img/avatar/soldier.png',
+        avatar: './img/avatar/soldier.png',
         nombre: 'Ana',
         apellido: 'Sayago',
         email: 'anita@gmail.com',
@@ -15,7 +15,7 @@ if (!localStorage.getItem('usuarios')) {
       {
         username: 'crist',
         clave: 'admin123',
-        avatar: '../img/avatar/monkey.png',
+        avatar: './img/avatar/monkey.png',
         nombre: 'Cristopher',
         apellido: 'Cardarelli',
         email: 'cristopher@gmail.com',
@@ -25,7 +25,7 @@ if (!localStorage.getItem('usuarios')) {
       {
         username: 'eli',
         clave: 'admin123',
-        avatar: '../img/avatar/pilot.png',
+        avatar: './img/avatar/pilot.png',
         nombre: 'Eliezer',
         apellido: 'Montes',
         email: 'eliezer@gmail.com',
@@ -35,7 +35,7 @@ if (!localStorage.getItem('usuarios')) {
       {
         username: 'hernan',
         clave: 'admin123',
-        avatar: '../img/avatar/alien.png',
+        avatar: './img/avatar/alien.png',
         nombre: 'Hernan',
         apellido: 'Casasola',
         email: 'hernan.casasola@gmail.com',

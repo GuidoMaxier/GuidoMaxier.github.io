@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneos - 25 de mayo</title>
+    <link rel="shortcut icon" href="/img/torneo-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/torneos.css" >
+    <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>    
+        <h1>Inscripción a Torneos</h1>
+    </header>
+       
+    <main>
+        <h2>Equipos</h2>
+        <section id="form" >        
+            <form action="" enctype="multipart/form-data" id="form-equipo">
+                <div class="container d-flex">
+                    <div class="form-control d-flex-column">
+                        <label for="">Nombre equipo</label>
+                        <input type="text" class="input-search" name="nameTeam" id="nameTeam">
+                    </div>
+                    <div class="form-control d-flex-column">
+                        <label for="">Deporte</label>
+                        <select id="deporte" name="deporte">
+                            <option value=1>Paddel</option>
+                            <option value=2>Tenis Doble</option>
+                            <option value=3>Futbol 5</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-control d-flex-column">
+                        <label for="">Logo equipo</label>
+                        <input type="file" class="input-search" name="banner" id="banner-form">
+                    </div>
+                    <input type="hidden" class="" name="id_equipo" id="id_equipo">
+                    <button class="btn-cac" type="button" id="btn-add-equipo">Agregar</button>
+                </div>
+            </form>
+        </section>
+
+        <h2>Jugadores</h2>
+        <section id="form" >        
+            <form action="" enctype="multipart/form-data" id="form-jugador">
+                <div class="container d-flex">
+                    <div class="form-control d-flex-column">
+                        <label for="">Nombre jugador</label>
+                        <input type="text" class="input-search" name="" id="namePlayer">
+                    </div>
+                    <div class="form-control d-flex-column">
+                        <label for="">DNI</label>
+                        <input type="text" class="input-search" name="dni" id="dni">
+                    </div>
+                    
+                    <div class="form-control d-flex-column">
+                        <label for="">Fecha Nacimiento</label>
+                        <input type="date" class="input-search" name="date" id="date">
+                    </div>
+
+                    <input type="hidden" class="" name="id" id="id_jugador">
+                    <button class="btn-cac" type="button" id="btn-add-jugador">Agregar</button>
+                </div>
+            </form>
+        </section>
+        <section id="list" class="container">
+            <h2 class="search-title">Listado de equipos</h2>
+            <table id="list-table-equipos" class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre equipo</th>
+                        <th>Deporte</th>
+                        <th>Logo</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <br>
+            <div id="list-div-equipos">
+
+            </div>
+        </section>
+        
+    </main>
+</body>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2023 Planeta Deportes
+            <span class="social-icons">
+                <!-- <a href="https://www.facebook.com/Planeta_Deportes" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/Planeta_Deportes" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/Planeta_Deportes" target="_blank"><i class="fab fa-instagram"></i></a> -->
+                <a href="https://github.com/GuidoMaxier/FRONTEND" target="_blank"><i class="fab fa-github"></i></a>
+            </span>
+        </p>
+    </div>
+</footer>
+<script src="../scripts/crud_torneo.js"></script>
+</html>

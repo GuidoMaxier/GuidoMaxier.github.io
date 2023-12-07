@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSCRIPCIONES A TORNEOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/torneo-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/crud-team.css">
+
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+
+    <!-- Incluir SweetAlert2 CSS y JavaScript -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Inscripción a Torneos</h1>
+    </header>
+
+    <main>
+        <div id="app">
+            <section id="form">
+                <form action="" enctype="multipart/form-data" id="form-equipo">
+                    <div class="container d-flex">
+                        <div class="form-control d-flex-column">
+                            <label for=""> Nombre del Equipo </label>
+                            <br>
+                            <input type="text" class="input-search" name="nombre" id="nombre" v-model="nombre">
+                        </div>
+                        <div class="form-control d-flex-column">
+                            <label for="">Deporte del Equipo</label>
+                            <br>
+                            <select class="input-search" name="deporte" id="deporte" v-model="deporte">
+                                <option value=1>Paddel</option>
+                                <option value=2>Tenis</option>
+                                <option value=3>Futbol</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control d-flex-column">
+                            <label for=""> Logo del Equipo </label>
+                            <br>
+                            <input type="file" class="input-search" name="logo" id="logo-form" @change="onFileChange" required>
+                        </div>
+                        <label for=""> ID: </label>
+                        <input type="text" class="input-id" name="id" id="id_equipo" v-model="id_equipo">
+                        <button class="btn" type="button" id="btn-add-equipo" v-on:click="saveEquipo">Agregar</button>
+
+                    </div>
+                </form>
+            </section>
+            <section id="list" class="container">
+                <h2 class="search-title">Listado de Equipos</h2>
+                <table id="list-table-equipos" class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>deporte</th>
+                            <th>logo</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="equipo in equipos">
+                            <td>{{equipo.nombre}}</td>
+                            <td>
+                                {{
+                                equipo.deporte === 1 ? 'Paddel' :
+                                equipo.deporte === 2 ? 'Tenis' :
+                                equipo.deporte === 3 ? 'Futbol' :
+                                'Otro'
+                                }}
+                            </td>
+                            <td>
+                                <img v-bind:src="api_server+equipo.logo" class="img-list">
+                            </td>
+                            <td>
+                                <button class="btn" v-on:click="getEquipo(equipo.id)"><i
+                                        class="fa fa-pencil"></button></i>
+                                <button class="btn" v-on:click="deleteEquipo(equipo.id)"><i
+                                        class="fa fa-trash"></button></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Planeta Deportes
+                <span class="social-icons">
+                    <!-- <a href="https://www.facebook.com/Planeta_Deportes" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/Planeta_Deportes" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/Planeta_Deportes" target="_blank"><i class="fab fa-instagram"></i></a> -->
+                    <a href="https://github.com/GuidoMaxier/FRONTEND" target="_blank"><i class="fab fa-github"></i></a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="../scripts/crud-teams-vue.js"></script>
+
+
+
+</body>
+
+</html>

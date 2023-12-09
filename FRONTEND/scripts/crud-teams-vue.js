@@ -4,7 +4,8 @@ createApp({
   data() {
     return {
         equipos : [],
-        api_server:"http://127.0.0.1:8000",
+        // api_server:"http://127.0.0.1:8000", https://guidomaxier.pythonanywhere.com/
+        api_server:"https://guidomaxier.pythonanywhere.com",
         id_equipo:'',
         nombre:'',
         deporte: '',

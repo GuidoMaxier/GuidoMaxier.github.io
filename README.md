@@ -1,4 +1,4 @@
-# ¡Hola, soy Hernan Guido Gustavo Casasola! 👋
+# ¡Hola, soy Hernan Casasola! (Guido Maxier)
 
 Actualmente, estoy cursando la carrera de **Tecnicatura en Desarrollo de Software** y tengo experiencia trabajando con diversas tecnologías modernas.
 
@@ -27,6 +27,7 @@ Este es un proyecto integrador para la carrera de **Tecnicatura en Desarrollo de
 - En el pasado, programé en **Turbo Pascal** y **C#** para aprender y experimentar, aunque no tengo repositorios en GitHub con estos lenguajes.
 
 ## 📊 Estadísticas de GitHub
+
 ![Profile views](https://komarev.com/ghpvc/?username=GuidoMaxier&color=blueviolet)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=GuidoMaxier&layout=compact&theme=radical)
 <!-- 
